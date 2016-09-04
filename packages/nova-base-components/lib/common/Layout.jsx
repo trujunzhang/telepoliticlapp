@@ -10,7 +10,7 @@ class Layout extends Component {
     }
 
     componentWillMount() {
-        this.context.messages.layout = this;
+        this.context.messages.appStatus.registerLayout(this);
         this.state = this.initialState = {
             isSearching: false,
             cachePost: null,
@@ -95,7 +95,7 @@ class Layout extends Component {
 
               <div>
                   <Telescope.components.Header {...this.props} />
-                  <Telescope.components.UserLogin />
+                  {/*<Telescope.components.UserLogin />*/}
               </div>
 
               <div className={this.state.isSearching ? 'overlayActive_oQWJ3' : 'overlayInactive_1UI7W'}></div>
