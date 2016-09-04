@@ -43,8 +43,7 @@
   },
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "mup": "git+https://github.com/arunoda/meteor-up.git"
+    "autoprefixer": "^6.3.6"
   },
   "postcss": {
     "plugins": {
@@ -54,8 +53,5 @@
         ]
       }
     }
-  },
-  "scripts": {
-    "test": "meteor test --driver-package practicalmeteor:mocha --settings=settings.json"
   }
 }
