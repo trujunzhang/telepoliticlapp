@@ -11,6 +11,23 @@
   cursor: pointer
 }
 
+.legacy-popover.v-top-left:before, .popover.v-top-left:before, .legacy-popover.v-top-center:before, .popover.v-top-center:before, .legacy-popover.v-top-right:before, .popover.v-top-right:before, .legacy-popover.v-bottom-left:before, .popover.v-bottom-left:before, .legacy-popover.v-bottom-center:before, .popover.v-bottom-center:before, .legacy-popover.v-bottom-right:before, .popover.v-bottom-right:before, .legacy-popover.v-top-left:after, .popover.v-top-left:after, .legacy-popover.v-top-center:after, .popover.v-top-center:after, .legacy-popover.v-top-right:after, .popover.v-top-right:after, .legacy-popover.v-bottom-left:after, .popover.v-bottom-left:after, .legacy-popover.v-bottom-center:after, .popover.v-bottom-center:after, .legacy-popover.v-bottom-right:after, .popover.v-bottom-right:after {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.legacy-popover.v-top-left:before, .popover.v-top-left:before, .legacy-popover.v-top-center:before, .popover.v-top-center:before, .legacy-popover.v-top-right:before, .popover.v-top-right:before, .legacy-popover.v-bottom-left:before, .popover.v-bottom-left:before, .legacy-popover.v-bottom-center:before, .popover.v-bottom-center:before, .legacy-popover.v-bottom-right:before, .popover.v-bottom-right:before {
+  border-width: 11px
+}
+
+.legacy-popover.v-top-left:after, .popover.v-top-left:after, .legacy-popover.v-top-center:after, .popover.v-top-center:after, .legacy-popover.v-top-right:after, .popover.v-top-right:after, .legacy-popover.v-bottom-left:after, .popover.v-bottom-left:after, .legacy-popover.v-bottom-center:after, .popover.v-bottom-center:after, .legacy-popover.v-bottom-right:after, .popover.v-bottom-right:after {
+  border-width: 10px
+}
+
 .legacy-popover {
   display: none
 }
@@ -259,11 +276,6 @@
 
 .popover--footer {
   border-top: 1px solid #f0efef
-}
-
-.legacy-popover.v-bottom-center:before, .legacy-popover.v-bottom-center:after, .popover.v-bottom-center:before, .popover.v-bottom-center:after {
-  bottom: 100%;
-  left: 50%
 }
 
 .legacy-popover.v-bottom-center:before, .popover.v-bottom-center:before {
