@@ -20,6 +20,10 @@ class HeaderPopoverMenu extends Component {
             {"href": "/topics/wearables", "title": "Sustainability"},
         ];
 
+        const comp = this.props.popoverMenu;
+        const top = comp.top + comp.height + 40;
+        const left = (comp.left + comp.width / 2) - 40;
+
         return (
           <div className="popover v-bottom-center" style={{top: 48, left: 1092.5}}>
               <ul className="content_2mq4P">
