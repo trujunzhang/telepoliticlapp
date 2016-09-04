@@ -10,7 +10,7 @@ class Layout extends Component {
     }
 
     componentWillMount() {
-        this.context.messages.appStatus.registerLayout(this);
+        this.context.messages.registerCompont(this);
         this.state = this.initialState = {
             isSearching: false,
             isLogin: false,

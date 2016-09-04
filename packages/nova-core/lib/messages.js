@@ -16,6 +16,13 @@ const Messages = {
     appStatus: new AppStatus(),
     postDetailSet: new PostDetailSet(),
 
+    layout: Component,
+
+    registerCompont(layout){
+        this.layout = layout;
+        this.appStatus.registerLayout(layout);
+    },
+
     pushAndPostShow(postId){
         var cachePost = this.postDetailSet.push(postId);
         this.appStatus.updateCachePost(cachePost);

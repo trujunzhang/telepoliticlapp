@@ -20,7 +20,7 @@ class HeaderPopoverMenu extends Component {
             {"href": "/topics/wearables", "title": "Sustainability"},
         ];
 
-        const comp = this.props.popoverMenu;
+        const comp = this.props.comp;
         const top = comp.top + comp.height + 40;
         const left = (comp.left + comp.width / 2) - 40;
 
