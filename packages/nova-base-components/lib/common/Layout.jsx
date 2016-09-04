@@ -33,9 +33,17 @@ class Layout extends Component {
     }
 
     renderPopoverMenus() {
-        return (
-          <div>wanghao</div>
-        )
+        const popoverMenu = this.state.popoverMenu;
+        if (popoverMenu == null) {
+            return null;
+        }
+        const type = popoverMenu.type;
+        switch (typee) {
+            case PopoverMenuType.MoreButton:
+                break;
+            case PopoverMenuType.LoggedUserMenu:
+                break;
+        }
     }
 
     renderPostSingle(cachePost) {
