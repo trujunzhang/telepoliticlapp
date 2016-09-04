@@ -16,12 +16,12 @@ class Layout extends Component {
             isLogin: false,
             popoverMenu: null,
             cachePost: null,
+            didMount: false,
         };
     }
 
     componentDidMount() {
-        //const postId = "67964fa0bd17c1e8b5f5528c8343ec1d";
-        //this.showCurrentPostPanel(postId);
+        this.setState({didMount: true});
     }
 
     dismissCurrentPostPanel() {
@@ -66,6 +66,9 @@ class Layout extends Component {
     }
 
     renderPosts() {
+        if (this.state.didMount) {
+            document.body.className = (this.state.cachePost ? "no-scroll" : "");
+        }
         if (this.state.cachePost != null) {
             return (
               <div className="overlay_1AkSl modal-spotlight">
