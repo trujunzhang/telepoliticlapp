@@ -5,12 +5,50 @@ import Users from 'meteor/nova:users';
 
 class UserLogin extends Component {
 
+    oauthSignIn(serviceName) {
+        //const {formState, waiting, user} = this.state;
+        //Thanks Josh Owens for this one.
+        function capitalService() {
+            return serviceName.charAt(0).toUpperCase() + serviceName.slice(1);
+        }
+
+        if (serviceName === 'meteor-developer') {
+            serviceName = 'meteorDeveloperAccount';
+        }
+
+        const loginWithService = Meteor["loginWith" + capitalService()];
+
+        let options = {}; // use default scope unless specified
+        if (Accounts.ui._options.requestPermissions[serviceName])
+            options.requestPermissions = Accounts.ui._options.requestPermissions[serviceName];
+        if (Accounts.ui._options.requestOfflineToken[serviceName])
+            options.requestOfflineToken = Accounts.ui._options.requestOfflineToken[serviceName];
+        if (Accounts.ui._options.forceApprovalPrompt[serviceName])
+            options.forceApprovalPrompt = Accounts.ui._options.forceApprovalPrompt[serviceName];
+
+        loginWithService(options, (error) => {
+            if (error) {
+                this.showMessage(T9n.get(`error.accounts.${error.reason}`) || T9n.get("Unknown error"));
+            } else {
+                var formState = STATES.PROFILE;
+                this.setState({formState: formState, message: ''});
+                loginResultCallback(() => {
+                    Meteor.setTimeout(() => this.onSignedInHook(), 100);
+                });
+            }
+        });
+    }
+
+    onSignedInHook() {
+        this.context.messages.appStatus.dismissLoginUI();
+    }
+
     loginTwitter() {
 
     }
 
     loginFacebook() {
-
+        this.oauthSignIn("facebook");
     }
 
     dismissLoginUI() {
