@@ -25,7 +25,7 @@ class HeaderPopoverMenu extends Component {
         const left = (comp.left + comp.width / 2) - 40;
 
         return (
-          <div className="popover v-bottom-center" style={{top: 48, left: 1092.5}}>
+          <div className="popover v-bottom-center" style={{top: top, left: left}}>
               <ul className="content_2mq4P">
                   {subNavigationItems.map((menu, key) => {
                       return (
