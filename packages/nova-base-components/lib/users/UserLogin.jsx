@@ -30,13 +30,28 @@ class UserLogin extends Component {
             if (error) {
                 this.showMessage(T9n.get(`error.accounts.${error.reason}`) || T9n.get("Unknown error"));
             } else {
-                var formState = STATES.PROFILE;
-                this.setState({formState: formState, message: ''});
-                loginResultCallback(() => {
-                    Meteor.setTimeout(() => this.onSignedInHook(), 100);
-                });
+                this.dismissLoginUI();
+                //this.showMessage(T9n.get(`error.accounts.{wanghao}`) || T9n.get("Unknown error"));
+                //var formState = STATES.PROFILE;
+                //this.setState({formState: formState, message: ''});
+                //loginResultCallback(() => {
+                //    Meteor.setTimeout(() => this.onSignedInHook(), 100);
+                //});
             }
         });
+    }
+
+    showMessage(message, type, clearTimeout) {
+        message = message.trim();
+
+        if (message) {
+            this.setState({message: {message: message, type: type}});
+            if (clearTimeout) {
+                Meteor.setTimeout(() => {
+                    this.setState({message: null});
+                }, clearTimeout);
+            }
+        }
     }
 
     onSignedInHook() {
