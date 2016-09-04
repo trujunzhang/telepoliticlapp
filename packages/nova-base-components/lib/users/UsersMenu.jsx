@@ -1,29 +1,34 @@
 import Telescope from 'meteor/nova:lib';
-import React, { PropTypes, Component } from 'react';
-import { FormattedMessage } from 'react-intl';
-import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/std:accounts-ui';
-import { Modal, Dropdown, MenuItem } from 'react-bootstrap';
-import { ContextPasser } from "meteor/nova:core";
-import { LinkContainer } from 'react-router-bootstrap';
+import React, {PropTypes, Component} from 'react';
+import {FormattedMessage} from 'react-intl';
+import {Meteor} from 'meteor/meteor';
+import {Accounts} from 'meteor/std:accounts-ui';
+import {Modal, Dropdown, MenuItem} from 'react-bootstrap';
+import {ContextPasser} from "meteor/nova:core";
+import {LinkContainer} from 'react-router-bootstrap';
 import Users from 'meteor/nova:users';
 
 class UsersMenu extends Component {
 
-  render() {
+    popoverUserMenus() {
 
-    const user = this.props.user;
+    }
 
-    return (
-      <div className="account_FReak">
-        <a className="addPostButton_2U4Gx menuLink_1h9ZN" href="/faq#how-do-i-submit-things-to-product-hunt">
+    render() {
+
+        const user = this.props.user;
+
+        return (
+          <div className="account_FReak">
+              <a className="addPostButton_2U4Gx menuLink_1h9ZN" href="/faq#how-do-i-submit-things-to-product-hunt">
             <span>
               <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8,10 L8,4 L6,4 L6,10 L0,10 L0,12 L6,12 L6,18 L8,18 L8,12 L14,12 L14,10 L8,10 Z" transform="translate(0 -4)" fill="#999" fill-rule="evenodd"></path>
+                <path d="M8,10 L8,4 L6,4 L6,10 L0,10 L0,12 L6,12 L6,18 L8,18 L8,12 L14,12 L14,10 L8,10 Z"
+                      transform="translate(0 -4)" fill="#999" fill-rule="evenodd"></path>
               </svg>
             </span>
-        </a>
-        <a href="#" className="activityFeedButton_1xqM_ menuLink_1h9ZN">
+              </a>
+              <a href="#" className="activityFeedButton_1xqM_ menuLink_1h9ZN">
             <span className="secondaryText_PM80d default_tBeAo base_3CbW2">
               <span>
                 <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
@@ -35,10 +40,10 @@ class UsersMenu extends Component {
                 </svg>
               </span>
             </span>
-        </a>
-        <a className="userMenu_3flqi" data-test="user-menu">
+              </a>
+              <a className="userMenu_3flqi" data-test="user-menu" onClick={this.popoverUserMenus.bind(this)}>
             <span className="user-image">
-              <div className="container_22rD3 user-image--image user_avator" >
+              <div className="container_22rD3 user-image--image user_avator">
                 <div className="container__Ql6q lazyLoadContainer_3KgZD">
                   <img
                     height="32"
@@ -48,20 +53,20 @@ class UsersMenu extends Component {
                 </div>
               </div>
             </span>
-        </a>
-      </div>
-    )
-  }
+              </a>
+          </div>
+        )
+    }
 
 }
 
 UsersMenu.propTypes = {
-  user: React.PropTypes.object
-}
+    user: React.PropTypes.object
+};
 
 UsersMenu.contextTypes = {
-  messages: React.PropTypes.object
-}
+    messages: React.PropTypes.object
+};
 
 module.exports = UsersMenu;
 export default UsersMenu;
