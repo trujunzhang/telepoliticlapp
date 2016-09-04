@@ -21,8 +21,8 @@ class HeaderPopoverMenu extends Component {
         ];
 
         const comp = this.props.comp;
-        const top = comp.top + comp.height + 40;
-        const left = (comp.left + comp.width / 2) - 40;
+        const top = comp.top + comp.height + 14;
+        const left = (comp.left + comp.width / 2) - 75;
 
         return (
           <div className="popover v-bottom-center" style={{top: top, left: left}}>
