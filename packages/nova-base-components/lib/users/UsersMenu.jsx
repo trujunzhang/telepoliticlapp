@@ -15,24 +15,16 @@ class UsersMenu extends Component {
     const user = this.props.user;
 
     return (
-      <div class="headerRight_2DQLQ centerItems_222KX">
-        <a href="#" class="metaMenu_3AKjk menuLink_1h9ZN" data-test="more">
-          <span>
-            <svg width="20" height="4" viewBox="0 0 20 4" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 4c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm8 0c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm8 0c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="#BBB" fill-rule="evenodd"></path>
-            </svg>
-          </span>
-        </a>
-        <div class="account_FReak">
-          <a class="addPostButton_2U4Gx menuLink_1h9ZN" href="/faq#how-do-i-submit-things-to-product-hunt">
+      <div className="account_FReak">
+        <a className="addPostButton_2U4Gx menuLink_1h9ZN" href="/faq#how-do-i-submit-things-to-product-hunt">
             <span>
               <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8,10 L8,4 L6,4 L6,10 L0,10 L0,12 L6,12 L6,18 L8,18 L8,12 L14,12 L14,10 L8,10 Z" transform="translate(0 -4)" fill="#999" fill-rule="evenodd"></path>
               </svg>
             </span>
-          </a>
-          <a href="#" class="activityFeedButton_1xqM_ menuLink_1h9ZN">
-            <span class="secondaryText_PM80d default_tBeAo base_3CbW2">
+        </a>
+        <a href="#" className="activityFeedButton_1xqM_ menuLink_1h9ZN">
+            <span className="secondaryText_PM80d default_tBeAo base_3CbW2">
               <span>
                 <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -43,22 +35,20 @@ class UsersMenu extends Component {
                 </svg>
               </span>
             </span>
-          </a>
-          <a href="#" class="userMenu_3flqi" data-test="user-menu">
-            <span class="user-image">
-              <div class="container_22rD3 user-image--image" style="height: 32px; width: 32px;">
-                <div class="container__Ql6q lazyLoadContainer_3KgZD">
+        </a>
+        <a href="#" className="userMenu_3flqi" data-test="user-menu">
+            <span className="user-image">
+              <div className="container_22rD3 user-image--image user_avator" >
+                <div className="container__Ql6q lazyLoadContainer_3KgZD">
                   <img
-                  height="32"
-                  src="https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=32&amp;h=32&amp;fit=crop"
-                  srcset="https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=32&amp;h=32&amp;fit=crop&amp;dpr=2 2x, https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=32&amp;h=32&amp;fit=crop&amp;dpr=3 3x"
-                  width="32"/>
+                    height="32"
+                    src="https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=32&amp;h=32&amp;fit=crop"
+                    srcset="https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=32&amp;h=32&amp;fit=crop&amp;dpr=2 2x, https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=32&amp;h=32&amp;fit=crop&amp;dpr=3 3x"
+                    width="32"/>
                 </div>
-                <img class="placeholder_E_0qw placeholderHidden_pb7Bz" height="32" src="https://ph-avatars.imgix.net/641022/original?auto=format&amp;codec=mozjpeg&amp;cs=strip&amp;w=9&amp;h=9&amp;q=5&amp;fit=crop&amp;blur=5" width="32"/>
               </div>
             </span>
-          </a>
-        </div>
+        </a>
       </div>
     )
   }
