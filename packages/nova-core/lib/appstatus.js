@@ -10,6 +10,21 @@ class AppStatus {
     updateCachePost(cachePost) {
         this.layout.setState({cachePost: cachePost});
     }
+
+    showLoginUI() {
+
+    }
+
+    dismissLoginUI() {
+
+    }
+
+    popoverRightMenu() {
+
+    }
+
+    dismissRightMenu() {
+    }
 }
 
 export default AppStatus;
