@@ -10,12 +10,16 @@ import Users from 'meteor/nova:users';
 
 class UsersPopoverMenu extends Component {
 
-    popoverOnFocus() {
-
+    componentDidMount() {
+        document.addEventListener('click', this.hide.bind(this), true)
     }
 
-    popoverOnBlur() {
+    componentWillUnmount() {
+        document.removeEventListener('click', this.hide.bind(this), true)
+    }
 
+    hide() {
+        this.context.messages.dismissPopoverMenu();
     }
 
     render() {
@@ -37,9 +41,7 @@ class UsersPopoverMenu extends Component {
         const left = (comp.left + comp.width / 2) - 75;
 
         return (
-          <div className="popover v-bottom-center" style={{top: top, left: left}}
-               onFocus={ this.popoverOnFocus.bind(this) }
-               onBlur={ this.popoverOnBlur.bind(this) }>
+          <div className="popover v-bottom-center" style={{top: top, left: left}}>
               <ul className="content_2mq4P">
                   {subNavigationItems.map((menu, key) => {
                       return (
