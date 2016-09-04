@@ -11,7 +11,13 @@ import Users from 'meteor/nova:users';
 class UsersMenu extends Component {
 
     popoverUserMenus() {
-
+        var button = this.refs.userProfile;
+        var top = button.offsetTop;
+        var left = button.offsetLeft;
+        var width = button.offsetWidth;
+        var height = button.offsetHeight;
+        var type = "LoggedUserMenu";
+        this.context.messages.showPopoverMenu(top, left, width, height, type);
     }
 
     render() {
@@ -43,7 +49,7 @@ class UsersMenu extends Component {
               </a>
               <a className="userMenu_3flqi" data-test="user-menu" onClick={this.popoverUserMenus.bind(this)}>
             <span className="user-image">
-              <div className="container_22rD3 user-image--image user_avator">
+              <div className="container_22rD3 user-image--image user_avator" ref="userProfile">
                 <div className="container__Ql6q lazyLoadContainer_3KgZD">
                   <img
                     height="32"
