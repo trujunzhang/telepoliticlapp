@@ -59,11 +59,15 @@ class Newsletter extends Component {
     }
 
     renderButton() {
-        return <Telescope.components.NewsletterButton
-          successCallback={() => this.successCallbackSubscription()}
-          subscribeText={this.context.intl.formatMessage({id: "newsletter.subscribe"})}
-          user={this.context.currentUser}
-        />
+        return (
+          <div className="news_letter_button_panel">
+              <Telescope.components.NewsletterButton
+                successCallback={() => this.successCallbackSubscription()}
+                subscribeText={this.context.intl.formatMessage({id: "newsletter.subscribe"})}
+                user={this.context.currentUser}
+              />
+          </div>
+        )
     }
 
     renderForm() {
