@@ -9,6 +9,17 @@ import Users from 'meteor/nova:users';
 
 class HeaderContent extends Component {
 
+    showPopoverMenu() {
+        this.refs.moreButton.measure((fx, fy, width, height, px, py) => {
+            console.log('Component width is: ' + width);
+            console.log('Component height is: ' + height);
+            console.log('X offset to frame: ' + fx);
+            console.log('Y offset to frame: ' + fy);
+            console.log('X offset to page: ' + px);
+            console.log('Y offset to page: ' + py);
+        });
+    }
+
     render() {
         const currentUser = this.props.currentUser;
         return (
@@ -34,7 +45,8 @@ class HeaderContent extends Component {
                   <Telescope.components.HeaderSearchForm />
               </div>
               <div className="headerRight_2DQLQ centerItems_222KX">
-                  <a href="#" className="metaMenu_3AKjk menuLink_1h9ZN" data-test="more">
+                  <a onClick={this.showPopoverMenu.bind(this)} className="metaMenu_3AKjk menuLink_1h9ZN"
+                     data-test="more" ref="moreButton">
                       <span>
                           <svg width="20" height="4"
                                viewBox="0 0 20 4"

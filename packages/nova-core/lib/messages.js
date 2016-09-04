@@ -1,6 +1,7 @@
 import React, {PropTypes, Component} from 'react';
 import PostDetailSet from "./postdetailset.js";
 import AppStatus from "./appstatus.js";
+import PopoverMenus from "./popovermenus.js"
 
 const Messages = {
     // Local (client-only) collection
@@ -13,8 +14,8 @@ const Messages = {
     },
 
     appStatus: new AppStatus(),
-
     postDetailSet: new PostDetailSet(),
+    popovermenus: new PopoverMenus(),
 
     pushAndPostShow(postId){
         var cachePost = this.postDetailSet.push(postId);

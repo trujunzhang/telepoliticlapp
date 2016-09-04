@@ -31,7 +31,11 @@ class Layout extends Component {
         this.context.messages.pushAndPostShow(postId);
     }
 
-//<Telescope.components.PostsPopup document={this.state.cachePost}/>
+    renderPopoverMenus() {
+        return (
+          <div>wanghao</div>
+        )
+    }
 
     renderPostSingle(cachePost) {
         const postId = cachePost.postId;
@@ -98,6 +102,8 @@ class Layout extends Component {
                   <Telescope.components.Header {...this.props} />
                   {this.state.isLogin ? <Telescope.components.UserLogin /> : null}
               </div>
+
+              {this.renderPopoverMenus()}
 
               <div className={this.state.isSearching ? 'overlayActive_oQWJ3' : 'overlayInactive_1UI7W'}></div>
               {this.renderPosts()}
