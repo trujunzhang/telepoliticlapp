@@ -33,21 +33,25 @@ class Layout extends Component {
     }
 
     renderPopoverMenus() {
-        const popoverMenu = this.state.popoverMenu;
-        if (popoverMenu == null) {
-            return null;
-        }
+        return (
+          <Telescope.components.HeaderPopoverMenu />
+        );
 
-        switch (popoverMenu.type) {
-            case "MoreButton":
-                return (
-                  <Telescope.components.HeaderPopoverMenu />
-                );
-            case "LoggedUserMenu":
-                return (
-                  <Telescope.components.UsersPopoverMenu user={this.props.currentUser}/>
-                );
-        }
+        //const popoverMenu = this.state.popoverMenu;
+        //if (popoverMenu == null) {
+        //    return null;
+        //}
+        //
+        //switch (popoverMenu.type) {
+        //    case "MoreButton":
+        //        return (
+        //          <Telescope.components.HeaderPopoverMenu />
+        //        );
+        //    case "LoggedUserMenu":
+        //        return (
+        //          <Telescope.components.UsersPopoverMenu user={this.props.currentUser}/>
+        //        );
+        //}
     }
 
     renderPostSingle(cachePost) {
