@@ -17,7 +17,7 @@ nova:forms
 nova:embedly
 nova:api
 nova:rss
-nova:kadira
+# nova:kadira
 nova:email
 nova:subscribe
 

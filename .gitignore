@@ -44,4 +44,6 @@ bundle.tar.gz
 mup.js
 mup.json
 
+packages/nova-kadira
+
 *.tar.gz
