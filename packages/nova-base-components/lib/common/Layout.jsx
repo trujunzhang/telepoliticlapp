@@ -34,19 +34,14 @@ class Layout extends Component {
 
     renderPopoverMenus() {
         const popoverMenu = this.state.popoverMenu;
-        if (popoverMenu == null) {
-            return null;
-        }
-
-        switch (popoverMenu.type) {
-            case "MoreButton":
-                return (
-                  <Telescope.components.HeaderPopoverMenu comp={this.state.popoverMenu}/>
-                );
-            case "LoggedUserMenu":
-                return (
-                  <Telescope.components.UsersPopoverMenu comp={this.state.popoverMenu} user={this.props.currentUser}/>
-                );
+        if (popoverMenu) {
+            switch (popoverMenu.type) {
+                case "MoreButton":
+                    return (<Telescope.components.HeaderPopoverMenu comp={this.state.popoverMenu}/>)
+                case "LoggedUserMenu":
+                    return (<Telescope.components.UsersPopoverMenu comp={this.state.popoverMenu}
+                                                                   user={this.props.currentUser}/>)
+            }
         }
     }
 
