@@ -11,7 +11,12 @@ import Posts from "meteor/nova:posts";
 class HeaderContent extends Component {
 
     showPopoverMenu() {
-        this.context.messages.showPopoverMenu(this.refs.moreButton.offsetTop, this.refs.moreButton.offsetLeft, this.refs.moreButton.offsetWidth, this.refs.moreButton.offsetHeight, PopoverMenuType.MoreButton);
+        var top = this.refs.moreButton.offsetTop;
+        var left = this.refs.moreButton.offsetLeft;
+        var width = this.refs.moreButton.offsetWidth;
+        var height = this.refs.moreButton.offsetHeight;
+        var type = PopoverMenuType.MoreButton;
+        this.context.messages.showPopoverMenu(top, left, width, height, type);
     }
 
     render() {
