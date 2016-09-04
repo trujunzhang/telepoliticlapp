@@ -10,7 +10,11 @@ import Users from 'meteor/nova:users';
 
 class UsersPopoverMenu extends Component {
 
-    popoverUserMenus() {
+    popoverOnFocus() {
+
+    }
+
+    popoverOnBlur() {
 
     }
 
@@ -28,8 +32,14 @@ class UsersPopoverMenu extends Component {
             {"href": "/topics/wearables", "title": "Sustainability"},
         ];
 
+        const comp = this.props.comp;
+        const top = comp.top + comp.height + 14;
+        const left = (comp.left + comp.width / 2) - 75;
+
         return (
-          <div className="popover v-bottom-center">
+          <div className="popover v-bottom-center" style={{top: top, left: left}}
+               onFocus={ this.onFocus.bind(this) }
+               onBlur={ this.onBlur.bind(this) }>
               <ul className="content_2mq4P">
                   {subNavigationItems.map((menu, key) => {
                       return (
