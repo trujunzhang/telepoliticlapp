@@ -9,6 +9,18 @@ import Users from 'meteor/nova:users';
 
 class HeaderPopoverMenu extends Component {
 
+    componentDidMount() {
+        document.addEventListener('click', this.hide.bind(this), true)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.hide.bind(this), true)
+    }
+
+    hide() {
+        this.context.messages.dismissPopoverMenu();
+    }
+
     render() {
         const subNavigationItems = [
             {"href": "/tech", "title": "Politics"},
@@ -39,8 +51,11 @@ class HeaderPopoverMenu extends Component {
           </div>
         )
     }
-
 }
+
+UsersPopoverMenu.contextTypes = {
+    messages: React.PropTypes.object
+};
 
 module.exports = HeaderPopoverMenu;
 export default HeaderPopoverMenu;
