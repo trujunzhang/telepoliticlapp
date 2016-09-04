@@ -15,7 +15,7 @@ const Messages = {
 
     appStatus: new AppStatus(),
     postDetailSet: new PostDetailSet(),
-    popovermenus: new PopoverMenus(),
+    popoverMenus: new PopoverMenus(),
 
     pushAndPostShow(postId){
         var cachePost = this.postDetailSet.push(postId);
