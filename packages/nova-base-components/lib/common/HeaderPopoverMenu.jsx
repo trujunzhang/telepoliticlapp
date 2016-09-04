@@ -10,33 +10,27 @@ import Users from 'meteor/nova:users';
 class HeaderPopoverMenu extends Component {
 
     render() {
+        const subNavigationItems = [
+            {"href": "/tech", "title": "Politics"},
+            {"href": "/games", "title": "Economy"},
+            {"href": "/podcasts", "title": "Foreign Affairs"},
+            {"href": "/books", "title": "Defence"},
+            {"href": "/topics/developer-tools", "title": "Education"},
+            {"href": "/topics/photography-tools", "title": "Healthcare"},
+            {"href": "/topics/wearables", "title": "Sustainability"},
+        ];
+
         return (
-          <div class="popover v-bottom-center" style="top: 48px; left: 1092.5px;"><!-- react-empty: 1016 -->
+          <div class="popover v-bottom-center">
               <ul class="content_2mq4P">
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/about">About</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/apps">Apps</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://stories.producthunt.com/" target="_blank">Blog</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/branding">Branding</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/collections">Collections</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/faq">FAQ</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/jobs">Jobs</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/live">LIVE Chats</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/meetups">Meetups</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/protips">Pro tips</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/radio">Radio</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/shop">Shop</a></li>
+                  {subNavigationItems.map((menu, key) => {
+                      return (
+                        <li
+                          className="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
+                            <a href="https://www.producthunt.com/@trujunzhang">{menu.title}</a>
+                        </li>
+                      )
+                  })}
               </ul>
           </div>
         )

@@ -18,21 +18,27 @@ class UsersPopoverMenu extends Component {
 
         const user = this.props.user;
 
+        const subNavigationItems = [
+            {"href": "/tech", "title": "Politics"},
+            {"href": "/games", "title": "Economy"},
+            {"href": "/podcasts", "title": "Foreign Affairs"},
+            {"href": "/books", "title": "Defence"},
+            {"href": "/topics/developer-tools", "title": "Education"},
+            {"href": "/topics/photography-tools", "title": "Healthcare"},
+            {"href": "/topics/wearables", "title": "Sustainability"},
+        ];
+
         return (
-          <div class="popover v-bottom-center" style="top: 63px; left: 1161.5px;"><!-- react-empty: 1010 -->
-              <ul class="content_2mq4P">
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/@trujunzhang">My Profile</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/@trujunzhang/collections">My Collections</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/my/invites">Invites (0)</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/my/settings/edit">Settings</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/v1/oauth/applications">API Dashboard</a></li>
-                  <li class="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"><a
-                    href="https://www.producthunt.com/logout">Logout</a></li>
+          <div className="popover v-bottom-center">
+              <ul className="content_2mq4P">
+                  {subNavigationItems.map((menu, key) => {
+                      return (
+                        <li
+                          className="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
+                            <a href="https://www.producthunt.com/@trujunzhang">{menu.title}</a>
+                        </li>
+                      )
+                  })}
               </ul>
           </div>
         )
