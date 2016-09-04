@@ -12,10 +12,10 @@ class UsersMenu extends Component {
 
     popoverUserMenus() {
         var button = this.refs.userProfile;
-        var top = button.offsetTop;
-        var left = button.offsetLeft;
-        var width = button.offsetWidth;
-        var height = button.offsetHeight;
+        var top = button.y;
+        var left = button.x;
+        var width = button.width;
+        var height = button.height;
         var type = "LoggedUserMenu";
         this.context.messages.showPopoverMenu(top, left, width, height, type);
     }
