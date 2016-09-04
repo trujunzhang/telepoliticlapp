@@ -53,7 +53,7 @@ class HeaderPopoverMenu extends Component {
     }
 }
 
-UsersPopoverMenu.contextTypes = {
+HeaderPopoverMenu.contextTypes = {
     messages: React.PropTypes.object
 };
 
