@@ -33,7 +33,7 @@ class UsersPopoverMenu extends Component {
         ];
 
         const comp = this.props.comp;
-        const top = comp.top + comp.height + 27;
+        const top = comp.top + comp.height + 26;
         const left = (comp.left + comp.width / 2) - 75;
 
         return (
