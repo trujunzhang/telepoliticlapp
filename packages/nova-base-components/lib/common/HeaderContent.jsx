@@ -10,6 +10,7 @@ import Users from 'meteor/nova:users';
 class HeaderContent extends Component {
 
     render() {
+        const currentUser = this.props.currentUser;
         return (
           <div className="headerContent_3umLL centerItems_222KX">
               <div className="headerLeft_1Kke2 centerItems_222KX">
@@ -44,9 +45,8 @@ class HeaderContent extends Component {
                           </svg>
                       </span>
                   </a>
-                  <a
-                    className="login_258vb header--login-button-legacy-tests-only secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"
-                    href="/login">Login</a>
+                  {currentUser ? <Telescope.components.UsersMenu user={currentUser}/> :
+                    <Telescope.components.UsersAccountMenu/>}
               </div>
           </div>
         )
