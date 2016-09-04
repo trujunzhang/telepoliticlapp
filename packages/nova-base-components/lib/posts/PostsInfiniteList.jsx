@@ -12,7 +12,6 @@ class PostsInfiniteList extends Component {
             isLoadingMore: false,
             hasMoreItems: true,
         };
-        this.loadItems = this.loadItems.bind(this);
     }
 
     /**
@@ -75,29 +74,6 @@ class PostsInfiniteList extends Component {
               </div>
           </div>
         )
-    }
-
-    loadItems() {
-        if (this.state.isLoadingMore) {
-            return;
-        }
-
-        this.setState({isLoadingMore: true});
-
-        //this.setState({ list: [...this.state.list, ...[newObject]] });
-        let num = this.state.currentPage;
-        let fetchedPosts = Posts.find().fetch();
-        //.map(function (post, index) {
-        //    let id = post._id;
-        //    //post._id = num * 10 + index;
-        //    //post.title = num * 10 + index;
-        //    return post;
-        //})
-        this.setState({
-            posts: [...this.state.posts, ...[fetchedPosts]],
-            currentPage: this.state.currentPage + 1,
-            isLoadingMore: false
-        })
     }
 
     render() {
