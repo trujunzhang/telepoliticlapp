@@ -13,6 +13,7 @@ class Layout extends Component {
         this.context.messages.appStatus.registerLayout(this);
         this.state = this.initialState = {
             isSearching: false,
+            isLogin: false,
             cachePost: null,
         };
     }
@@ -95,7 +96,7 @@ class Layout extends Component {
 
               <div>
                   <Telescope.components.Header {...this.props} />
-                  {/*<Telescope.components.UserLogin />*/}
+                  {this.state.isLogin ? <Telescope.components.UserLogin /> : null}
               </div>
 
               <div className={this.state.isSearching ? 'overlayActive_oQWJ3' : 'overlayInactive_1UI7W'}></div>

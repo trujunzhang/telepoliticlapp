@@ -12,11 +12,11 @@ class AppStatus {
     }
 
     showLoginUI() {
-
+        this.layout.setState({isLogin: true})
     }
 
     dismissLoginUI() {
-
+        this.layout.setState({isLogin: false})
     }
 
     popoverRightMenu() {
