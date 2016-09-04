@@ -16,7 +16,7 @@ class HeaderContent extends Component {
         var left = button.offsetLeft;
         var width = button.offsetWidth;
         var height = button.offsetHeight;
-        var type = PopoverMenuType.MoreButton;
+        var type = "MoreButton";
         this.context.messages.showPopoverMenu(top, left, width, height, type);
     }
 

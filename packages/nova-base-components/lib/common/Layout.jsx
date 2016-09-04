@@ -39,11 +39,11 @@ class Layout extends Component {
         }
 
         switch (popoverMenu.type) {
-            case PopoverMenuType.MoreButton:
+            case "MoreButton":
                 return (
                   <Telescope.components.HeaderPopoverMenu />
                 );
-            case PopoverMenuType.LoggedUserMenu:
+            case "LoggedUserMenu":
                 return (
                   <Telescope.components.UsersPopoverMenu user={this.props.currentUser}/>
                 );

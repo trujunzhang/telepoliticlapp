@@ -1,7 +1,4 @@
-const PopoverMenuType = {
-    MoreButton: 0,
-    LoggedUserMenu: 1
-};
+
 
 class PopoverMenus {
     constructor(top, left, width, height, type) {
