@@ -36,7 +36,7 @@ class UsersMenu extends Component {
               </span>
             </span>
         </a>
-        <a href="#" className="userMenu_3flqi" data-test="user-menu">
+        <a className="userMenu_3flqi" data-test="user-menu">
             <span className="user-image">
               <div className="container_22rD3 user-image--image user_avator" >
                 <div className="container__Ql6q lazyLoadContainer_3KgZD">
