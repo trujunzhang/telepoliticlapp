@@ -38,8 +38,8 @@ class UsersPopoverMenu extends Component {
 
         return (
           <div className="popover v-bottom-center" style={{top: top, left: left}}
-               onFocus={ this.onFocus.bind(this) }
-               onBlur={ this.onBlur.bind(this) }>
+               onFocus={ this.popoverOnFocus.bind(this) }
+               onBlur={ this.popoverOnBlur.bind(this) }>
               <ul className="content_2mq4P">
                   {subNavigationItems.map((menu, key) => {
                       return (
