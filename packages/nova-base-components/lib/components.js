@@ -8,6 +8,7 @@ Telescope.registerComponent("Header",               require('./common/Header.jsx
 Telescope.registerComponent("HeaderSearchForm",     require('./common/HeaderSearchForm.jsx'));
 Telescope.registerComponent("HeaderContent",        require('./common/HeaderContent.jsx'));
 Telescope.registerComponent("HeaderNavigation",     require('./common/HeaderNavigation.jsx'));
+Telescope.registerComponent("HeaderPopoverMenu",    require('./common/HeaderPopoverMenu.jsx'));
 Telescope.registerComponent("Layout",               require('./common/Layout.jsx'));
 Telescope.registerComponent("Logo",                 require('./common/Logo.jsx'));
 Telescope.registerComponent("Flash",                require('./common/Flash.jsx'));
@@ -89,6 +90,7 @@ Telescope.registerComponent("UsersName",            require('./users/UsersName.j
 Telescope.registerComponent("UsersMenu",            require('./users/UsersMenu.jsx'));
 Telescope.registerComponent("UsersAccountMenu",     require('./users/UsersAccountMenu.jsx'));
 Telescope.registerComponent("UsersAccountForm",     require('./users/UsersAccountForm.jsx'));
+Telescope.registerComponent("UsersPopoverMenu",     require('./common/UsersPopoverMenu.jsx'));
 
 // user's profile
 Telescope.registerComponent("UserLogin",            require('./users/UserLogin.jsx'));

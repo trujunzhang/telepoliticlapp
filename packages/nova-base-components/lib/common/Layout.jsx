@@ -37,12 +37,16 @@ class Layout extends Component {
         if (popoverMenu == null) {
             return null;
         }
-        const type = popoverMenu.type;
-        switch (typee) {
+
+        switch (popoverMenu.type) {
             case PopoverMenuType.MoreButton:
-                break;
+                return (
+                  <Telescope.components.HeaderPopoverMenu />
+                );
             case PopoverMenuType.LoggedUserMenu:
-                break;
+                return (
+                  <Telescope.components.UsersPopoverMenu user={this.props.currentUser}/>
+                );
         }
     }
 
