@@ -6,18 +6,12 @@ import {Modal, Dropdown, MenuItem} from 'react-bootstrap';
 import {ContextPasser} from "meteor/nova:core";
 import {LinkContainer} from 'react-router-bootstrap';
 import Users from 'meteor/nova:users';
+import Posts from "meteor/nova:posts";
 
 class HeaderContent extends Component {
 
     showPopoverMenu() {
-        this.refs.moreButton.measure((fx, fy, width, height, px, py) => {
-            console.log('Component width is: ' + width);
-            console.log('Component height is: ' + height);
-            console.log('X offset to frame: ' + fx);
-            console.log('Y offset to frame: ' + fy);
-            console.log('X offset to page: ' + px);
-            console.log('Y offset to page: ' + py);
-        });
+        this.context.messages.showPopoverMenu(this.refs.moreButton.offsetTop, this.refs.moreButton.offsetLeft, this.refs.moreButton.offsetWidth, this.refs.moreButton.offsetHeight, PopoverMenuType.MoreButton);
     }
 
     render() {
@@ -65,6 +59,10 @@ class HeaderContent extends Component {
     }
 
 }
+
+HeaderContent.contextTypes = {
+    messages: React.PropTypes.object
+};
 
 module.exports = HeaderContent;
 export default HeaderContent;

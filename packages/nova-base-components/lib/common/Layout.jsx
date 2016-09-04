@@ -14,6 +14,7 @@ class Layout extends Component {
         this.state = this.initialState = {
             isSearching: false,
             isLogin: false,
+            popoverMenu: null,
             cachePost: null,
         };
     }

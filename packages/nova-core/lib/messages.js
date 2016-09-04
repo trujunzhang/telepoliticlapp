@@ -15,7 +15,6 @@ const Messages = {
 
     appStatus: new AppStatus(),
     postDetailSet: new PostDetailSet(),
-    popoverMenus: new PopoverMenus(),
 
     pushAndPostShow(postId){
         var cachePost = this.postDetailSet.push(postId);
@@ -25,6 +24,15 @@ const Messages = {
     dismissPostPanel(){
         var cachePost = this.postDetailSet.lastPage();
         this.appStatus.updateCachePost(cachePost);
+    },
+
+    showPopoverMenu(top, left, width, height, type){
+        var popoverMenus = new PopoverMenus(top, left, width, height, type);
+        this.layout.setState({popoverMenu: popoverMenus});
+    },
+
+    dismissPopoverMenu(){
+        this.layout.setState({popoverMenu: null});
     },
 
     markAsSeen(messageId) {
