@@ -38,7 +38,9 @@ a.link_3fUGJ {
 
 @media(min-width: 769px) {
   .link_3fUGJ {
-    padding: 25px
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
   }
 
   .link_3fUGJ:hover {
@@ -212,7 +214,6 @@ li:last-of-type .link_3fUGJ {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  bottom: 25px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -576,3 +577,32 @@ a.moreAssociations_28e7H:hover {
   display: inline-block;
 }
 
+// Tags
+
+.tags_2lIV- {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: absolute;
+  a {
+    color: #ccc;
+    padding-right: 8px;
+  }
+}
+
+@media(min-width: 769px) {
+  .tags_2lIV- {
+    left: 140px;
+    right: 25px
+  }
+}
+
+@media(max-width: 768px) {
+  .tags_2lIV- {
+    left: 105px;
+    right: 0
+  }
+}

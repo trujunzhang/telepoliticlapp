@@ -47,9 +47,9 @@ class PostsItem extends Component {
         )
     }
 
-    renderActionButtons(post) {
+    renderActionButtons(post, bottom) {
         return (
-          <div className="meta_2lIV-">
+          <div className="meta_2lIV-" style={{bottom: bottom}}>
               <div className="actionButtons_2mJsw">
                   <Telescope.components.Vote post={post}
                                              currentUser={this.context.currentUser}/> {this.renderCommenters()}
@@ -187,10 +187,18 @@ class PostsItem extends Component {
         const mytextvar = post.excerpt;
         const maxlimit = 150;
 
+        var postItemBottom = 50;
+        var tagsBottom = 65;
+        if (post.tags.length == 0) {
+            tagsBottom = 0;
+            postItemBottom = 25;
+        }
+
         return (
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
-              <a className="link_3fUGJ" onClick={this.popupDetail.bind(this)}>
+              <a className="link_3fUGJ" style={{"padding-bottom": postItemBottom}}
+                 onClick={this.popupDetail.bind(this)}>
                   <div className="post-thumbnail thumbnail_JX64A thumbnail post-left-thumbnail">
                       <div className="container_22rD3 thumbnail">
                           {post.thumbnailUrl ? <Telescope.components.PostsThumbnail post={post}/> : null}
@@ -203,16 +211,15 @@ class PostsItem extends Component {
                           {((mytextvar).length > maxlimit)
                             ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                             : mytextvar}</p>
-                      <div className="entrymeta">
-                          <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>
-                          <a href="http://www.politicl.com/tag/india-education/" rel="tag">India Education</a>
-                          <a href="http://www.politicl.com/tag/lifestyle/" rel="tag">lifestyle</a>
-                          <a href="http://www.politicl.com/tag/teachers/" rel="tag">Teachers</a>
-                          <a href="http://www.politicl.com/tag/teachers-day-2/" rel="tag">Teachers Day</a>
-                      </div>
                   </div>
               </a>
-              {this.renderActionButtons(post)}
+              <div className="entrymeta tags_2lIV-" style={{bottom: tagsBottom}}>
+                  {post.tags.map((menu, key) => {
+                      return (
+                        <a href="http://www.politicl.com/tag/education/" rel="tag">{menu}</a>)
+                  })}
+              </div>
+              {this.renderActionButtons(post, 25)}
           </div>
         )
     }

@@ -45,6 +45,12 @@ body.categories-posts-show #unrouted-app-header + .page-main {
   box-sizing: content-box;
 }
 
+a {
+  cursor: pointer;
+  color: #f36c3d;
+  transition: color ease-out 300ms;
+}
+
 @import "breakpoints";
 @import "colors";
 @import "variables";
