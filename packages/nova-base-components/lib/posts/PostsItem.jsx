@@ -157,10 +157,7 @@ class PostsItem extends Component {
                         : mytextvar}</p>
 
                   <div className="entrymeta">
-                        <span className="date">
-                            8 hours ago
-                        </span>
-
+                      <span className="date">8 hours ago</span>
                       <span className="comments">
                             Tags: {post.tags.map((menu, key) => {
                           return (
@@ -169,14 +166,14 @@ class PostsItem extends Component {
                         </span>
                   </div>
 
+                  <span className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2">{post.title}</span>
+                  <span className="text_3Wjo0 subtle_1BWOT base_3CbW2">
+                  { ((mytextvar).length > maxlimit) ?
+                    (((mytextvar).substring(0, maxlimit - 3)) + '...') :
+                    mytextvar }
+                  </span>
               </div>
 
-              {/*<span className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2">{post.title}</span>*/}
-              {/*<span className="text_3Wjo0 subtle_1BWOT base_3CbW2">*/}
-              {/*{ ((mytextvar).length > maxlimit) ?*/}
-              {/*(((mytextvar).substring(0, maxlimit - 3)) + '...') :*/}
-              {/*mytextvar }*/}
-              {/*</span>*/}
 
           </div>
         )

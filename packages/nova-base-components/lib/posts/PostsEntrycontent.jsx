@@ -19,17 +19,6 @@ const PostsEntrycontent = ({post}) => {
                     ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                     : mytextvar}</p>
 
-              <div className="entrymeta">
-                        <span className="date">
-                            8 hours ago
-                        </span>
-
-                  <span className="comments">
-                            Tags: {post.tags.map((menu, key) => {
-                      return (<a href="http://www.politicl.com/tag/education/" rel="tag">{menu}</a>)
-                  })}
-                        </span>
-              </div>
 
           </div>
 
