@@ -47,9 +47,9 @@ class PostsItem extends Component {
         )
     }
 
-    renderActionButtons(post, bottom) {
+    renderActionButtons(post) {
         return (
-          <div className="meta_2lIV-" style={{bottom: bottom}}>
+          <div className="meta_2lIV-" style={{bottom: 25}}>
               <div className="actionButtons_2mJsw">
                   <Telescope.components.Vote post={post}
                                              currentUser={this.context.currentUser}/> {this.renderCommenters()}
@@ -187,17 +187,10 @@ class PostsItem extends Component {
         const mytextvar = post.excerpt;
         const maxlimit = 150;
 
-        var postItemBottom = 50;
-        var tagsBottom = 65;
-        if (post.tags.length == 0) {
-            tagsBottom = 0;
-            postItemBottom = 25;
-        }
-
         return (
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
-              <a className="link_3fUGJ" style={{"padding-bottom": postItemBottom}}
+              <a className="link_3fUGJ" style={{"padding-bottom": 25}}
                  onClick={this.popupDetail.bind(this)}>
                   <div className="post-thumbnail thumbnail_JX64A thumbnail post-left-thumbnail">
                       <div className="container_22rD3 thumbnail">
@@ -211,15 +204,17 @@ class PostsItem extends Component {
                           {((mytextvar).length > maxlimit)
                             ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                             : mytextvar}</p>
+                      <div >
+                          {post.tags.map((menu, key) => {
+                              return (
+                                <button href="http://www.politicl.com/tag/education/" rel="tag">{menu}</button>)
+                          })}
+                      </div>
                   </div>
+
               </a>
-              <div className="entrymeta tags_2lIV-" style={{bottom: tagsBottom}}>
-                  {post.tags.map((menu, key) => {
-                      return (
-                        <a href="http://www.politicl.com/tag/education/" rel="tag">{menu}</a>)
-                  })}
-              </div>
-              {this.renderActionButtons(post, 25)}
+
+              {this.renderActionButtons(post)}
           </div>
         )
     }
