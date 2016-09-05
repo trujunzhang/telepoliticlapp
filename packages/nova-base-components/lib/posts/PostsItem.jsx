@@ -199,12 +199,10 @@ class PostsItem extends Component {
                   <div className="content_3oLx4">
                       <span
                         className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2 post-title">{post.title}</span>
-                      <div className="detail">
-                          <p style={{"margin-bottom": 10}} className="post_description">
-                              {((mytextvar).length > maxlimit)
-                                ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
-                                : mytextvar}</p>
-                      </div>
+                      <p style={{"margin-bottom": 10}} className="post_description">
+                          {((mytextvar).length > maxlimit)
+                            ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
+                            : mytextvar}</p>
                       <div className="entrymeta">
                           <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>
                           <a href="http://www.politicl.com/tag/india-education/" rel="tag">India Education</a>
