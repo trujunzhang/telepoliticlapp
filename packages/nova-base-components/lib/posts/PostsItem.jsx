@@ -49,7 +49,7 @@ class PostsItem extends Component {
 
     renderActionButtons(post) {
         return (
-          <div className="meta_2lIV-" >
+          <div className="meta_2lIV-">
               <div className="actionButtons_2mJsw">
                   <Telescope.components.Vote post={post}
                                              currentUser={this.context.currentUser}/> {this.renderCommenters()}
@@ -208,9 +208,9 @@ class PostsItem extends Component {
                           {post.tags.map((tag, key) => {
                               return (
                                 <li onClick={this.tagOnClick} type="button"
-                                        className="btn btn-default"
-                                        style={{"margin-right": 4, "margin-bottom": 4}}
-                                        rel="tag">{tag}</li>)
+                                    className="posts-tag"
+                                    style={{"margin-right": 4, "margin-bottom": 4}}
+                                    rel="tag">{tag}</li>)
                           })}
                       </ul>
                   </div>

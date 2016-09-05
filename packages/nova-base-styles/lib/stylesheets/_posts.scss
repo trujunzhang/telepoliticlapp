@@ -605,3 +605,22 @@ a.moreAssociations_28e7H:hover {
     right: 0
   }
 }
+
+.posts-tag {
+  background: #F6F2EF;
+  color: #AF9D95;
+  border: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: .25rem;
+  margin-right: 5px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+.posts-tag:hover {
+  background: #f36c3d;
+  color: #fff;
+  border-color: #f36c3d;
+  text-decoration: none;
+}
