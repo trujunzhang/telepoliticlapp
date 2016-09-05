@@ -184,6 +184,9 @@ class PostsItem extends Component {
         // console.log(post)
         // console.log(post.user)
 
+        const mytextvar = post.excerpt;
+        const maxlimit = 150;
+
         return (
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
@@ -193,7 +196,23 @@ class PostsItem extends Component {
                           {post.thumbnailUrl ? <Telescope.components.PostsThumbnail post={post}/> : null}
                       </div>
                   </div>
-                  <Telescope.components.PostsEntrycontent post={post}/>
+                  <div className="content_3oLx4">
+                      <span
+                        className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2 post-title">{post.title}</span>
+                      <div className="detail">
+                          <p style={{"margin-bottom": 10}} className="post_description">
+                              {((mytextvar).length > maxlimit)
+                                ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
+                                : mytextvar}</p>
+                      </div>
+                      <div className="entrymeta">
+                          <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>
+                          <a href="http://www.politicl.com/tag/india-education/" rel="tag">India Education</a>
+                          <a href="http://www.politicl.com/tag/lifestyle/" rel="tag">lifestyle</a>
+                          <a href="http://www.politicl.com/tag/teachers/" rel="tag">Teachers</a>
+                          <a href="http://www.politicl.com/tag/teachers-day-2/" rel="tag">Teachers Day</a>
+                      </div>
+                  </div>
               </a>
               {this.renderActionButtons(post)}
           </div>
