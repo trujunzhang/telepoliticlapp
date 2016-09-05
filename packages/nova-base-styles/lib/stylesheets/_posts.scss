@@ -38,9 +38,7 @@ a.link_3fUGJ {
 
 @media(min-width: 769px) {
   .link_3fUGJ {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 25px;
+    padding: 25px
   }
 
   .link_3fUGJ:hover {
@@ -214,6 +212,7 @@ li:last-of-type .link_3fUGJ {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  bottom: 25px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

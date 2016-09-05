@@ -49,7 +49,7 @@ class PostsItem extends Component {
 
     renderActionButtons(post) {
         return (
-          <div className="meta_2lIV-" style={{bottom: 25}}>
+          <div className="meta_2lIV-" >
               <div className="actionButtons_2mJsw">
                   <Telescope.components.Vote post={post}
                                              currentUser={this.context.currentUser}/> {this.renderCommenters()}
@@ -190,7 +190,7 @@ class PostsItem extends Component {
         return (
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
-              <a className="link_3fUGJ" style={{"padding-bottom": 25}}>
+              <a className="link_3fUGJ">
                   <div className="post-thumbnail thumbnail_JX64A thumbnail post-left-thumbnail">
                       <div className="container_22rD3 thumbnail">
                           {post.thumbnailUrl ? <Telescope.components.PostsThumbnail post={post}/> : null}
@@ -204,15 +204,15 @@ class PostsItem extends Component {
                           {((mytextvar).length > maxlimit)
                             ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                             : mytextvar}</p>
-                      <div >
-                          {post.tags.map((tag, key) => {
-                              return (
-                                <button onClick={this.tagOnClick} type="button"
-                                        className="btn btn-default"
-                                        style={{"margin-right": 4, "margin-bottom": 4}}
-                                        rel="tag">{tag}</button>)
-                          })}
-                      </div>
+                      {/*<ul >*/}
+                          {/*{post.tags.map((tag, key) => {*/}
+                              {/*return (*/}
+                                {/*<li onClick={this.tagOnClick} type="button"*/}
+                                        {/*className="btn btn-default"*/}
+                                        {/*style={{"margin-right": 4, "margin-bottom": 4}}*/}
+                                        {/*rel="tag">{tag}</li>)*/}
+                          {/*})}*/}
+                      {/*</ul>*/}
                   </div>
 
               </a>
