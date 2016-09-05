@@ -37,7 +37,9 @@ accounts-password@1.3.0
 
 nova:debug
 
-############ Your Packages ############
+############ Unit test ############
+# https://guide.meteor.com/testing.html
+app:unit-test
 
 ############ Your Packages ############
 
