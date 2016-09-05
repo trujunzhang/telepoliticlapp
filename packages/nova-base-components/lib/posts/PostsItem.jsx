@@ -124,6 +124,58 @@ class PostsItem extends Component {
         }, 700);
     }
 
+    //render() {
+    //
+    //    const post = this.props.post;
+    //
+    //    // console.log(post)
+    //    // console.log(post.user)
+    //    const mytextvar = post.excerpt;
+    //    const maxlimit = 150;
+    //
+    //    return (
+    //      <div className="entrycontent clearfix" onClick={this.popupDetail.bind(this)}>
+    //          <div className="thumbnail">
+    //              <a rel="nofollow" target="_blank">
+    //                  <img
+    //                    width="100" height="100"
+    //                    src={post.thumbnailUrl}
+    //                    className="attachment-thumbnail size-thumbnail wp-post-image"
+    //                    alt="{post.title}"
+    //                    title="{post.title}"/>
+    //              </a>
+    //          </div>
+    //
+    //          <div className="detail">
+    //              <h3 className="post-title">
+    //                  <a title="{post.title}" rel="nofollow">{post.title}</a>
+    //              </h3>
+    //
+    //              <p style={{"margin-bottom": 10}}> { ((mytextvar).length > maxlimit) ?
+    //                (((mytextvar).substring(0, maxlimit - 3)) + '...') : mytextvar }</p>
+    //
+    //
+    //              <div className="entrymeta">
+    //  <span className="date">
+    //    8 hours ago
+    //  </span>
+    //
+    //                  <span className="comments">
+    //    Tags:
+    //                      {post.tags.map((menu, key) => {
+    //                          return (
+    //                            <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>,
+    //                          )
+    //                      })}
+    //  </span>
+    //              </div>
+    //
+    //          </div>
+    //
+    //      </div>
+    //    )
+    //}
+
     render() {
 
         const post = this.props.post;
@@ -137,7 +189,7 @@ class PostsItem extends Component {
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
               <a className="link_3fUGJ" onClick={this.popupDetail.bind(this)}>
-                  <div className="post-thumbnail thumbnail_JX64A thumbnail">
+                  <div className="post-thumbnail thumbnail_JX64A thumbnail" {{"padding-right": 10}}>
                       <div className="container_22rD3 thumbnail">
                           {post.thumbnailUrl ? <Telescope.components.PostsThumbnail post={post}/> : null}
                       </div>
