@@ -17,14 +17,14 @@ const PostsEntrycontent = ({post}) => {
 
               <div className="entrymeta">
                   <span className="date">8 hours ago</span>
-                  <span className="comments">
-                        Tags:
-                        <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>,
-                        <a href="http://www.politicl.com/tag/india-education/" rel="tag">India Education</a>,
-                        <a href="http://www.politicl.com/tag/lifestyle/" rel="tag">lifestyle</a>,
-                        <a href="http://www.politicl.com/tag/teachers/" rel="tag">Teachers</a>,
-                        <a href="http://www.politicl.com/tag/teachers-day-2/" rel="tag">Teachers Day</a>
-                  </span>
+                  <div className="comments">
+                      Tags-xxx:
+                      <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>,
+                      <a href="http://www.politicl.com/tag/india-education/" rel="tag">India Education</a>,
+                      <a href="http://www.politicl.com/tag/lifestyle/" rel="tag">lifestyle</a>,
+                      <a href="http://www.politicl.com/tag/teachers/" rel="tag">Teachers</a>,
+                      <a href="http://www.politicl.com/tag/teachers-day-2/" rel="tag">Teachers Day</a>
+                  </div>
               </div>
           </div>
       </div>

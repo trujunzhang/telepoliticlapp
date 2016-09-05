@@ -188,13 +188,9 @@ class PostsItem extends Component {
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
               <a className="link_3fUGJ" onClick={this.popupDetail.bind(this)}>
-                  <div className="post-thumbnail thumbnail_JX64A thumbnail" style={{
-                      "padding-right": 10
-                  }}>
+                  <div className="post-thumbnail thumbnail_JX64A thumbnail post-left-thumbnail">
                       <div className="container_22rD3 thumbnail">
-                          {post.thumbnailUrl
-                            ? <Telescope.components.PostsThumbnail post={post}/>
-                            : null}
+                          {post.thumbnailUrl ? <Telescope.components.PostsThumbnail post={post}/> : null}
                       </div>
                   </div>
                   <Telescope.components.PostsEntrycontent post={post}/>
