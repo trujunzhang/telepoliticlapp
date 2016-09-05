@@ -111,7 +111,7 @@ class Newsletter extends Component {
                           </span>
                           <span className="welcomeEmoji_3oUs1" style={{"padding-right": 8}}>👋</span>
                           <span
-                            className="welcome_tPFOL boldText_3B8fa text_3Wjo0 default_tBeAo base_3CbW2">Welcome to Politicl news</span>
+                            className="welcome_tPFOL boldText_3B8fa text_3Wjo0 default_tBeAo base_3CbW2">Welcome to Politicl News</span>
                           <span className="tagline_1UlAa text_3Wjo0 subtle_1BWOT base_3CbW2">Get the best news in your inbox, daily.</span>
                           {this.context.currentUser ? this.renderButton() : this.renderForm()}
                       </div>

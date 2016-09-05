@@ -96,8 +96,8 @@ class PostsItem extends Component {
                   <div>
                       <a
                         className="button_2I1re smallSize_1da-r secondaryText_PM80d greySolidColor_270pZ solidVariant_2wWrf"
-                        href="/topics/web">
-                          <div className="buttonContainer_wTYxi">Web</div>
+                        onClick={this.authorOnClick()}>
+                          <div className="buttonContainer_wTYxi">{post.author}</div>
                       </a>
                       <a href="#" className="moreAssociations_28e7H">
                             <span className="secondaryText_PM80d subtle_1BWOT base_3CbW2">
@@ -225,6 +225,10 @@ class PostsItem extends Component {
     tagOnClick() {
         console.log("wh");
         //this.context.messages.dismissPostPanel();
+    }
+
+    authorOnClick() {
+
     }
 }
 
