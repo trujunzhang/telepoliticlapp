@@ -130,6 +130,8 @@ class PostsItem extends Component {
 
         // console.log(post)
         // console.log(post.user)
+        const mytextvar = post.excerpt;
+        const maxlimit = 150;
 
         return (
           <div className="postItem_2pV9v" rel="post-item-#74101">
@@ -143,7 +145,9 @@ class PostsItem extends Component {
                   <div className="content_3oLx4">
                       <span className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2">{post.title}</span>
                       <span className="text_3Wjo0 subtle_1BWOT base_3CbW2">
-                          {post.htmlBody}
+                          { ((mytextvar).length > maxlimit) ?
+                            (((mytextvar).substring(0, maxlimit - 3)) + '...') :
+                            mytextvar }
                       </span>
                   </div>
               </a>
