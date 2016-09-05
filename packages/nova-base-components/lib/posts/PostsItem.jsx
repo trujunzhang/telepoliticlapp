@@ -190,24 +190,27 @@ class PostsItem extends Component {
         return (
           <div className="postItem_2pV9v" rel="post-item-#74101">
 
-              <a className="link_3fUGJ" style={{"padding-bottom": 25}}
-                 onClick={this.popupDetail.bind(this)}>
+              <a className="link_3fUGJ" style={{"padding-bottom": 25}}>
                   <div className="post-thumbnail thumbnail_JX64A thumbnail post-left-thumbnail">
                       <div className="container_22rD3 thumbnail">
                           {post.thumbnailUrl ? <Telescope.components.PostsThumbnail post={post}/> : null}
                       </div>
                   </div>
                   <div className="content_3oLx4">
-                      <span
-                        className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2 post-title">{post.title}</span>
-                      <p style={{"margin-bottom": 10}} className="post_description">
+                      <span onClick={this.popupDetail.bind(this)}
+                            className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2 post-title">{post.title}</span>
+                      <p style={{"margin-bottom": 10}} className="post_description"
+                         onClick={this.popupDetail.bind(this)}>
                           {((mytextvar).length > maxlimit)
                             ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                             : mytextvar}</p>
                       <div >
-                          {post.tags.map((menu, key) => {
+                          {post.tags.map((tag, key) => {
                               return (
-                                <button href="http://www.politicl.com/tag/education/" rel="tag">{menu}</button>)
+                                <button onClick={this.tagOnClick} type="button"
+                                        className="btn btn-default"
+                                        style={{"margin-right": 4, "margin-bottom": 4}}
+                                        rel="tag">{tag}</button>)
                           })}
                       </div>
                   </div>
@@ -217,6 +220,11 @@ class PostsItem extends Component {
               {this.renderActionButtons(post)}
           </div>
         )
+    }
+
+    tagOnClick() {
+        console.log("wh");
+        //this.context.messages.dismissPostPanel();
     }
 }
 
