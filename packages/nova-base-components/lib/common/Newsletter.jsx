@@ -109,7 +109,7 @@ class Newsletter extends Component {
                                 </path>
                             </svg>
                           </span>
-                          <span className="welcomeEmoji_3oUs1">👋</span>
+                          <span className="welcomeEmoji_3oUs1" style={{"padding-right": 8}}>👋</span>
                           <span
                             className="welcome_tPFOL boldText_3B8fa text_3Wjo0 default_tBeAo base_3CbW2">Welcome to Product Hunt</span>
                           <span className="tagline_1UlAa text_3Wjo0 subtle_1BWOT base_3CbW2">Get the best new products in your inbox, daily.</span>

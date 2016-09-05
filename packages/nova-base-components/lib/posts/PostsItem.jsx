@@ -149,9 +149,7 @@ class PostsItem extends Component {
                       <a title={post.title} rel="nofollow">{post.title}</a>
                   </h3>
 
-                  <p style={{
-                      "margin-bottom": 10
-                  }}>
+                  <p style={{"margin-bottom": 10, "margin-top": 6}}>
                       {((mytextvar).length > maxlimit)
                         ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                         : mytextvar}</p>

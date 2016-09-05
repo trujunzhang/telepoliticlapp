@@ -530,5 +530,44 @@ a.moreAssociations_28e7H:hover {
 }
 
 // Post's Entrycontent
+.post-title {
+  font-family: "Open Sans";
+  line-height: 22px;
+  font-weight: 600;
+  font-style: normal;
+  color: #000000;
+  font-size: 16px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.24s ease-in-out;
+  -moz-transition: opacity 0.24s ease-in-out;
+  transition: opacity 0.24s ease-in-out;
+}
 
+.post_description {
+  font-family: "Open Sans";
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #656565;
+}
+
+.entrymeta {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #ccc;
+  font-size: 12px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.24s ease-in-out;
+  -moz-transition: opacity 0.24s ease-in-out;
+  transition: opacity 0.24s ease-in-out;
+}
+
+.entrymeta span,
+.entry-meta span {
+  margin-right: 10px;
+  display: inline-block;
+}
 

@@ -8,20 +8,25 @@ const PostsEntrycontent = ({post}) => {
     return (
 
       <div className="content_3oLx4">
-
+          <span className="title_2p9fd featured_2W7jd default_tBeAo base_3CbW2 post-title">{post.title}</span>
           <div className="detail">
-              <h3 className="post-title">
-                  <a title={post.title} rel="nofollow">{post.title}</a>
-              </h3>
-
-              <p style={{"margin-bottom": 10}}>
+              <p style={{"margin-bottom": 10}} className="post_description">
                   {((mytextvar).length > maxlimit)
                     ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                     : mytextvar}</p>
 
-
+              <div className="entrymeta">
+                  <span className="date">8 hours ago</span>
+                  <span className="comments">
+                        Tags:
+                        <a href="http://www.politicl.com/tag/education/" rel="tag">Education</a>,
+                        <a href="http://www.politicl.com/tag/india-education/" rel="tag">India Education</a>,
+                        <a href="http://www.politicl.com/tag/lifestyle/" rel="tag">lifestyle</a>,
+                        <a href="http://www.politicl.com/tag/teachers/" rel="tag">Teachers</a>,
+                        <a href="http://www.politicl.com/tag/teachers-day-2/" rel="tag">Teachers Day</a>
+                  </span>
+              </div>
           </div>
-
       </div>
     )
 };
