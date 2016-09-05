@@ -204,15 +204,15 @@ class PostsItem extends Component {
                           {((mytextvar).length > maxlimit)
                             ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                             : mytextvar}</p>
-                      {/*<ul >*/}
-                          {/*{post.tags.map((tag, key) => {*/}
-                              {/*return (*/}
-                                {/*<li onClick={this.tagOnClick} type="button"*/}
-                                        {/*className="btn btn-default"*/}
-                                        {/*style={{"margin-right": 4, "margin-bottom": 4}}*/}
-                                        {/*rel="tag">{tag}</li>)*/}
-                          {/*})}*/}
-                      {/*</ul>*/}
+                      <ul >
+                          {post.tags.map((tag, key) => {
+                              return (
+                                <li onClick={this.tagOnClick} type="button"
+                                        className="btn btn-default"
+                                        style={{"margin-right": 4, "margin-bottom": 4}}
+                                        rel="tag">{tag}</li>)
+                          })}
+                      </ul>
                   </div>
 
               </a>
