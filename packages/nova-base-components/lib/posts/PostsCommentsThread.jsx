@@ -11,6 +11,26 @@ class PostsCommentsThread extends Component {
         this.context.messages.appStatus.showLoginUI();
     }
 
+    rendLoginUI() {
+        return (
+          <div className="access_5Hx8h notice_CT78V box_2b3oc text_3Wjo0 subtle_1BWOT base_3CbW2">
+        <span>Commenting is limited to those invited by others in the community.
+          <br/>
+        </span>
+              <a onClick={this.onLoginClick.bind(this)}>Login to continue.</a>
+          </div>
+        )
+    }
+
+    renderCommentForm() {
+        return (
+          <div className="posts-comments-thread-new">
+              <h4><FormattedMessage id="comments.new"/></h4>
+              <Telescope.components.CommentsNew type="comment" postId={post._id}/>
+          </div>
+        )
+    }
+
     render() {
         const post = this.props.document;
         const currentUser = this.props.currentUser;
@@ -29,14 +49,7 @@ class PostsCommentsThread extends Component {
                 component={Telescope.components.CommentsList}
                 listId="comments.list"
               />
-              { currentUser ?
-                <div className="posts-comments-thread-new">
-                    <h4><FormattedMessage id="comments.new"/></h4>
-                    <Telescope.components.CommentsNew type="comment" postId={post._id}/>
-                </div> :
-                <div>
-                    <a onClick={this.onLoginClick.bind(this)}><FormattedMessage id="comments.please_log_in"/></a>
-                </div> }
+              { currentUser ? this.renderCommentForm() : this.rendLoginUI()}
           </div>
         )
     }
