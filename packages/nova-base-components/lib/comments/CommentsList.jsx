@@ -1,41 +1,28 @@
 import Telescope from 'meteor/nova:lib';
-import React, {PropTypes, Component} from 'react';
+import React from 'react';
 import {injectIntl, FormattedMessage} from 'react-intl';
 
-class CommentsList extends Component {
+const CommentsList = ({results, currentUser, hasMore, ready, count, totalCount, loadMore}) => {
 
-//const  = ({results, currentUser, hasMore, ready, count, totalCount, loadMore}) => {
+    const x = 0;
 
-    renderCommentList() {
-        const results = this.props.results;
-        const currentUser = this.props.currentUser;
-        const hasMore = this.props.hasMore;
-        const ready = this.props.ready;
-        const count = this.props.count;
-        const totalCount = this.props.totalCount;
-        const loadMore = this.props.loadMore;
-
+    if (!!results.length) {
         return (
-          <div className="discussion_cr2q_">
-
-              {results.map(comment => <Telescope.components.CommentsNode comment={comment} key={comment._id}
-                                                                         currentUser={currentUser}/>)}
-              {hasMore ? (ready ?
-                <Telescope.components.CommentsLoadMore loadMore={loadMore} count={count} totalCount={totalCount}/> :
-                <Telescope.components.Loading/>) : null}
-          </div>
+          <Telescope.components.CommentsNodeList results={results}
+                                                 currentUser={currentUser}
+                                                 hasMore={hasMore}
+                                                 ready={ready}
+                                                 count={count}
+                                                 totalCount={totalCount}
+                                                 loadMore={loadMore}/>
         )
-    }
-
-    renderLoading() {
+    } else if (!ready) {
         return (
           <div className="comments-list">
               <Telescope.components.Loading/>
           </div>
         )
-    }
-
-    renderEmptyPanel() {
+    } else {
         return (
           <div className="comments-list">
               <p>
@@ -45,17 +32,7 @@ class CommentsList extends Component {
         )
     }
 
-    render() {
-        const results = this.props.result;
-        if (!!results.length) {
-            this.renderCommentList()
-        } else if (!ready) {
-            this.renderLoading()
-        } else {
-            this.renderEmptyPanel()
-        }
-    }
-}
+};
 
 CommentsList.displayName = "CommentsList";
 
