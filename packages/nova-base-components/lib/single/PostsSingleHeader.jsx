@@ -23,8 +23,7 @@ const PostsSingleHeader = (document, currentUser) => {
                                     <span
                                       className="secondaryBoldText_1PBCf secondaryText_PM80d default_tBeAo base_3CbW2">
                                         <span className="inactiveLink_C7GyP baseLink_8cU0P">
-                                            <a target="_blank"
-                                               href="https://www.producthunt.com/r/f79eeb2c5f95e3/68707">read more</a>
+                                            <a target="_blank" href={post.custom_url}>read more</a>
                                         </span>
                                     </span>
                                 </span>
@@ -91,8 +90,7 @@ const PostsSingleHeader = (document, currentUser) => {
 
               </div>
               <div className="timestamp_3yr9h">
-                    <span className="secondaryText_PM80d inverse_1CN6F base_3CbW2">Featured
-
+                    <span className="secondaryText_PM80d inverse_1CN6F base_3CbW2">{post.author}
                         <time datetime="2016-07-06T02:22:22.000-07:00" title="2016-07-06T02:22:22.000-07:00">2 months ago</time>
                     </span>
               </div>

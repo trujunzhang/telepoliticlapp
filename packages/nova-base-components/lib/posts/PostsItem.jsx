@@ -204,7 +204,7 @@ class PostsItem extends Component {
                           {((mytextvar).length > maxlimit)
                             ? (((mytextvar).substring(0, maxlimit - 3)) + '...')
                             : mytextvar}</p>
-                      <ul >
+                      <ul className="posts-tags">
                           {post.tags.map((tag, key) => {
                               return (
                                 <li onClick={this.onTagClick.bind(this, tag)} type="button"
