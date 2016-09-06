@@ -3,15 +3,17 @@ import {FormattedMessage} from 'react-intl';
 import {ListContainer} from "meteor/utilities:react-list-container";
 import {ModalTrigger} from "meteor/nova:core";
 import Comments from "meteor/nova:comments";
+import Posts from "meteor/nova:posts";
 
 class PostsCommentsThread extends Component {
 
     onLoginClick() {
-
+        this.context.messages.appStatus.showLoginUI();
     }
 
     render() {
         const post = this.props.document;
+        const currentUser = this.props.currentUser;
 
         return (
           <div className="posts-comments-thread">
@@ -39,6 +41,10 @@ class PostsCommentsThread extends Component {
         )
     }
 }
+
+PostsCommentsThread.contextTypes = {
+    messages: React.PropTypes.object
+};
 
 PostsCommentsThread.displayName = "PostsCommentsThread";
 
