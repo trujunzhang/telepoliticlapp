@@ -22,7 +22,7 @@ class PostsPage extends Component {
                           </div>
                           <div className="constraintWidth_ZyYbM body_1a08C">
                               {/*middle left*/}
-                              <Telescope.components.PostDetail post={post} user={currentUser}/>
+                              {/*<Telescope.components.PostDetail post={post} user={currentUser}/>*/}
                           </div>
                           <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
                       </div>

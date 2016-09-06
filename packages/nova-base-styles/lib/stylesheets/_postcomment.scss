@@ -1,4 +1,10 @@
 
+.link_j6xU_ {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex
+}
+
 .sortToggle_3nVmh {
   position: absolute;
   right: 0;
@@ -17,3 +23,25 @@
 .heading_AsD8K {
   margin: 0 0 20px
 }
+
+// comment note
+
+.thread_1dWPf {
+  margin: 0 0 20px;
+  padding: 7px 0 0 47px;
+  position: relative
+}
+
+.thread_1dWPf:target {
+  -webkit-animation: highlight_2Grvv 2s;
+  animation: highlight_2Grvv 2s
+}
+
+// User's avatar
+.userImage_3lsm5 {
+  position: absolute;
+  left: 0;
+  top: 0
+}
+
+
