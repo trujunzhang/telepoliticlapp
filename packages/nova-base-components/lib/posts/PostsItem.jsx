@@ -227,7 +227,7 @@ class PostsItem extends Component {
     };
 
     onAuthorClick(author) {
-        console.log(tag);
+        console.log(author);
     }
 }
 
