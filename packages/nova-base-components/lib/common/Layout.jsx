@@ -111,13 +111,17 @@ class Layout extends Component {
 
               <div>
                   <Telescope.components.Header {...this.props} />
-                  {this.state.isLogin ? <Telescope.components.UserLogin /> : null}
               </div>
 
+              {/*Rendering the popover menus*/}
               {this.renderPopoverMenus()}
 
               <div className={this.state.isSearching ? 'overlayActive_oQWJ3' : 'overlayInactive_1UI7W'}></div>
+              {/*Showing the post's detail pages*/}
               {this.renderPosts()}
+              {/*Showing the login UI*/}
+              {this.state.isLogin ? <Telescope.components.UserLogin /> : null}
+
               <div >
                   <div className="constraintWidth_ZyYbM container_3aBgK">
                       <FlashContainer component={Telescope.components.FlashMessages}/>
