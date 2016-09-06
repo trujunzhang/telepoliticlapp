@@ -1,12 +1,23 @@
 import Telescope from 'meteor/nova:lib';
-import React from 'react';
+import React, {PropTypes, Component} from 'react';
 import {injectIntl, FormattedMessage} from 'react-intl';
 
-const CommentsList = ({results, currentUser, hasMore, ready, count, totalCount, loadMore}) => {
+class CommentsList extends Component {
 
-    if (!!results.length) {
+//const  = ({results, currentUser, hasMore, ready, count, totalCount, loadMore}) => {
+
+    renderCommentList() {
+        const results = this.props.results;
+        const currentUser = this.props.currentUser;
+        const hasMore = this.props.hasMore;
+        const ready = this.props.ready;
+        const count = this.props.count;
+        const totalCount = this.props.totalCount;
+        const loadMore = this.props.loadMore;
+
         return (
-          <div className="comments-list">
+          <div className="discussion_cr2q_">
+
               {results.map(comment => <Telescope.components.CommentsNode comment={comment} key={comment._id}
                                                                          currentUser={currentUser}/>)}
               {hasMore ? (ready ?
@@ -14,13 +25,17 @@ const CommentsList = ({results, currentUser, hasMore, ready, count, totalCount, 
                 <Telescope.components.Loading/>) : null}
           </div>
         )
-    } else if (!ready) {
+    }
+
+    renderLoading() {
         return (
           <div className="comments-list">
               <Telescope.components.Loading/>
           </div>
         )
-    } else {
+    }
+
+    renderEmptyPanel() {
         return (
           <div className="comments-list">
               <p>
@@ -30,7 +45,17 @@ const CommentsList = ({results, currentUser, hasMore, ready, count, totalCount, 
         )
     }
 
-};
+    render() {
+        const results = this.props.result;
+        if (!!results.length) {
+            this.renderCommentList()
+        } else if (!ready) {
+            this.renderLoading()
+        } else {
+            this.renderEmptyPanel()
+        }
+    }
+}
 
 CommentsList.displayName = "CommentsList";
 
