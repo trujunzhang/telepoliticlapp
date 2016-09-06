@@ -96,7 +96,7 @@ class PostsItem extends Component {
                   <div>
                       <a
                         className="button_2I1re smallSize_1da-r secondaryText_PM80d greySolidColor_270pZ solidVariant_2wWrf"
-                        onClick={this.authorOnClick()}>
+                        onClick={this.onAuthorClick.bind(this, post.author)}>
                           <div className="buttonContainer_wTYxi">{post.author}</div>
                       </a>
                       <a href="#" className="moreAssociations_28e7H">
@@ -207,7 +207,7 @@ class PostsItem extends Component {
                       <ul >
                           {post.tags.map((tag, key) => {
                               return (
-                                <li onClick={this.tagOnClick} type="button"
+                                <li onClick={this.onTagClick.bind(this, tag)} type="button"
                                     className="posts-tag"
                                     style={{"margin-right": 4, "margin-bottom": 4}}
                                     rel="tag">{tag}</li>)
@@ -222,13 +222,12 @@ class PostsItem extends Component {
         )
     }
 
-    tagOnClick() {
-        console.log("wh");
-        //this.context.messages.dismissPostPanel();
-    }
+    onTagClick(tag) {
+        console.log(tag);
+    };
 
-    authorOnClick() {
-
+    onAuthorClick(author) {
+        console.log(tag);
     }
 }
 
