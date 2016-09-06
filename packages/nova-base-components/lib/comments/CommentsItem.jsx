@@ -64,11 +64,11 @@ class CommentsItem extends Component {
         const htmlBody = {__html: this.props.comment.htmlBody};
 
         return (
-          <div className="comments-item-text">
+          <div className="body_221xI tech_Oe_Kz text_3Wjo0 default_tBeAo base_3CbW2">
               <div dangerouslySetInnerHTML={htmlBody}></div>
               {/*{!this.props.comment.isDeleted ?*/}
-                {/*<a className="comments-item-reply-link" onClick={this.showReply}><Telescope.components.Icon*/}
-                  {/*name="reply"/> <FormattedMessage id="comments.reply"/></a> : null}*/}
+              {/*<a className="comments-item-reply-link" onClick={this.showReply}><Telescope.components.Icon*/}
+              {/*name="reply"/> <FormattedMessage id="comments.reply"/></a> : null}*/}
           </div>
         )
     }
@@ -124,19 +124,22 @@ class CommentsItem extends Component {
     //}
 
     renderBottomPanel() {
+        const comment = this.props.comment;
+
         return (
-          <div class="actions_3oz6g">
+          <div className="actions_3oz6g">
               <a rel="comment-upvote" href="#"
-                 class="upvote_3Nd3Q action_Hv6P3 secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
+                 className="upvote_3Nd3Q action_Hv6P3 secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
                   <span>
                     <svg width="9" height="8" viewBox="0 0 9 8" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9,8 L0,8 L4.5,0 L9,8 Z" fill="#999" fill-rule="evenodd"></path>
                     </svg>
                   </span>
-                  <span class="noVotesLabel_1gl1X">upvote</span>
+                  <span className="noVotesLabel_1gl1X">upvote</span>
               </a>
-              <a class="tweet_3a9pw action_Hv6P3 secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"
-                 rel="share-on-twitter" href="#">
+              <a
+                className="tweet_3a9pw action_Hv6P3 secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"
+                rel="share-on-twitter" href="#">
                   <span>
                     <span>
                       <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1"
@@ -147,11 +150,12 @@ class CommentsItem extends Component {
                           fill="#000000"></path>
                       </svg>
                     </span>
-                    <span class="label shareLabel_2yYck">tweet</span>
+                    <span className="label shareLabel_2yYck">tweet</span>
                   </span>
               </a>
-              <a class="facebook_1qw8K action_Hv6P3 secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"
-                 rel="share-on-facebook" href="#">
+              <a
+                className="facebook_1qw8K action_Hv6P3 secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2"
+                rel="share-on-facebook" href="#">
                   <span>
                     <span>
                       <svg width="8" height="13" viewBox="0 0 8 14" xmlns="http://www.w3.org/2000/svg">
@@ -160,12 +164,13 @@ class CommentsItem extends Component {
                           fill="#FFF" fill-rule="evenodd"></path>
                       </svg>
                     </span>
-                    <span class="label shareLabel_2yYck">share</span>
+                    <span className="label shareLabel_2yYck">share</span>
                   </span>
               </a>
-              <a href="#comment-349252"
-                 class="timestamp_28Wws secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
-                  <time title="2016-08-28T10:07:27.716-07:00" datetime="2016-08-28T10:07:27.716-07:00">14 hours ago
+              <a
+                className="timestamp_28Wws secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
+                  <time title="2016-08-28T10:07:27.716-07:00" datetime="2016-08-28T10:07:27.716-07:00">
+                      <FormattedRelative value={comment.postedAt}/>
                   </time>
               </a>
           </div>
@@ -179,17 +184,19 @@ class CommentsItem extends Component {
           <div className="thread_1dWPf" id={comment._id}>
               <Telescope.components.UsersAvatar size="small" user={comment.user}/>
 
-
-              <Telescope.components.UsersName user={comment.user}/>
+              <div className="heading_3axGt">
+                  <Telescope.components.UsersName user={comment.user}/>
+              </div>
               <div className="comments-item-date"><FormattedRelative value={comment.postedAt}/></div>
-              <Telescope.components.CanDo action="comments.edit" document={this.props.comment}>
-                  <div>
-                      <a className="comment-edit" onClick={this.showEdit}><FormattedMessage id="comments.edit"/></a>
-                      <a className="comment-delete" onClick={this.deleteComment}><FormattedMessage
-                        id="comments.delete"/></a>
-                  </div>
-              </Telescope.components.CanDo>
+              {/*<Telescope.components.CanDo action="comments.edit" document={this.props.comment}>*/}
+              {/*<div>*/}
+              {/*<a className="comment-edit" onClick={this.showEdit}><FormattedMessage id="comments.edit"/></a>*/}
+              {/*<a className="comment-delete" onClick={this.deleteComment}><FormattedMessage*/}
+              {/*id="comments.delete"/></a>*/}
+              {/*</div>*/}
+              {/*</Telescope.components.CanDo>*/}
 
+              {this.renderComment()}
               {/*{this.state.showEdit ? this.renderEdit() : this.renderComment()}*/}
 
               {/*{this.state.showReply ? this.renderReply() : null}*/}
