@@ -16,8 +16,12 @@ class CommentsNodeList extends Component {
         return (
           <div className="discussion_cr2q_">
 
-              {results.map(comment => <Telescope.components.CommentsNode comment={comment} key={comment._id}
-                                                                         currentUser={currentUser}/>)}
+              {results.map(comment =>
+                <Telescope.components.CommentsNode
+                  comment={comment}
+                  key={comment._id}
+                  currentUser={currentUser}/>
+              )}
               {hasMore ? (ready ?
                 <Telescope.components.CommentsLoadMore loadMore={loadMore} count={count} totalCount={totalCount}/> :
                 <Telescope.components.Loading/>) : null}

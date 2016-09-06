@@ -37,19 +37,30 @@ class PostsCommentsThread extends Component {
         const currentUser = this.props.currentUser;
 
         return (
-          <div className="posts-comments-thread">
-              <h4 className="posts-comments-thread-title"><FormattedMessage id="comments.comments"/></h4>
-              <ListContainer
-                collection={Comments}
-                publication="comments.list"
-                selector={{postId: post._id}}
-                terms={{postId: post._id, view: "postComments"}}
-                limit={0}
-                parentProperty="parentCommentId"
-                joins={Comments.getJoins()}
-                component={Telescope.components.CommentsList}
-                listId="comments.list"
-              />
+          <div class="discussion_cr2q_">
+              <h2 class="heading_2TFm8 heading_AsD8K title_2vHSk subtle_1BWOT base_3CbW2">Discussion</h2>
+              <a class="sortToggle_3nVmh text_3Wjo0 subtle_1BWOT base_3CbW2" href="#">most upvoted
+                  <span class="icon_2JDiK">
+                      <svg width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M6.752 1.514C7.472.678 7.158 0 6.057 0H1.052C-.05 0-.332.654.426 1.46L2.38 3.54c.758.806 1.952.786 2.674-.054l1.698-1.972z"
+                          fill="#A8ACB3" fill-rule="evenodd"></path>
+                      </svg>
+                  </span>
+              </a>
+              <div>
+                  <ListContainer
+                    collection={Comments}
+                    publication="comments.list"
+                    selector={{postId: post._id}}
+                    terms={{postId: post._id, view: "postComments"}}
+                    limit={0}
+                    parentProperty="parentCommentId"
+                    joins={Comments.getJoins()}
+                    component={Telescope.components.CommentsList}
+                    listId="comments.list"
+                  />
+              </div>
               { currentUser ? this.renderCommentForm() : this.rendLoginUI()}
           </div>
         )

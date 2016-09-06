@@ -4,8 +4,6 @@ import {injectIntl, FormattedMessage} from 'react-intl';
 
 const CommentsList = ({results, currentUser, hasMore, ready, count, totalCount, loadMore}) => {
 
-    const x = 0;
-
     if (!!results.length) {
         return (
           <Telescope.components.CommentsNodeList results={results}
