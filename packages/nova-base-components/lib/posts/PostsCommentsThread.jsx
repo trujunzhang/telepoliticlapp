@@ -23,6 +23,7 @@ class PostsCommentsThread extends Component {
     }
 
     renderCommentForm() {
+        const post = this.props.document;
         return (
           <div className="posts-comments-thread-new">
               <h4><FormattedMessage id="comments.new"/></h4>
