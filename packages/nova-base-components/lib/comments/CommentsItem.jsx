@@ -195,8 +195,8 @@ class CommentsItem extends Component {
                   </div>
               </Telescope.components.CanDo>
 
-              {this.renderComment()}
-              {/*{this.state.showEdit ? this.renderEdit() : this.renderComment()}*/}
+              {/*{this.renderComment()}*/}
+              {this.state.showEdit ? this.renderEdit() : this.renderComment()}
 
               {/*{this.state.showReply ? this.renderReply() : null}*/}
               {this.renderBottomPanel()}
