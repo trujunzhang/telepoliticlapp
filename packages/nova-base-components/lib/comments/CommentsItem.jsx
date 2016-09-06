@@ -187,14 +187,13 @@ class CommentsItem extends Component {
               <div className="heading_3axGt">
                   <Telescope.components.UsersName user={comment.user}/>
               </div>
-              {/*<div className="comments-item-date"><FormattedRelative value={comment.postedAt}/></div>*/}
-              {/*<Telescope.components.CanDo action="comments.edit" document={this.props.comment}>*/}
-              {/*<div>*/}
-              {/*<a className="comment-edit" onClick={this.showEdit}><FormattedMessage id="comments.edit"/></a>*/}
-              {/*<a className="comment-delete" onClick={this.deleteComment}><FormattedMessage*/}
-              {/*id="comments.delete"/></a>*/}
-              {/*</div>*/}
-              {/*</Telescope.components.CanDo>*/}
+              <Telescope.components.CanDo action="comments.edit" document={this.props.comment}>
+                  <div>
+                      <a className="comment-edit" onClick={this.showEdit}><FormattedMessage id="comments.edit"/></a>
+                      <a className="comment-delete" onClick={this.deleteComment}><FormattedMessage
+                        id="comments.delete"/></a>
+                  </div>
+              </Telescope.components.CanDo>
 
               {this.renderComment()}
               {/*{this.state.showEdit ? this.renderEdit() : this.renderComment()}*/}
