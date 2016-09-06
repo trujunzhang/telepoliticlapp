@@ -1,8 +1,6 @@
 import React, {PropTypes, Component} from 'react';
 import Posts from "meteor/nova:posts";
 
-//const PostsPage = ({document, currentUser}) => {
-
 class PostsPage extends Component {
 
     render() {
