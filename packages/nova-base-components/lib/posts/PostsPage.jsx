@@ -1,56 +1,46 @@
-import React from 'react';
+import React, {PropTypes, Component} from 'react';
 import Posts from "meteor/nova:posts";
 
-const PostsPage = ({document, currentUser}) => {
+//const PostsPage = ({document, currentUser}) => {
 
-    const post = document;
-    const htmlBody = {__html: post.htmlBody};
+class PostsPage extends Component {
 
-    //return (
-    //  <div className="posts-page">
-    //
-    //    <Telescope.components.HeadTags url={Posts.getLink(post)} title={post.title} image={post.thumbnailUrl} />
-    //
-    //    <Telescope.components.PostsItem post={post}/>
-    //
-    //    <div className="posts-page-body" dangerouslySetInnerHTML={htmlBody}></div>
-    //
-    //    {/*<SocialShare url={ Posts.getLink(post) } title={ post.title }/>*/}
-    //
-    //    <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
-    //
-    //  </div>
-    //)
+    render() {
 
-    return (
-      <div className="content_3X9xi">
+        const post = this.props.document;
+        const currentUser = this.props.currentUser;
+        const htmlBody = {__html: post.htmlBody};
 
-          <div className="container_2uJxj">
-              <section className="postSection_1iIbk">
-                  <div className="sectionContent_21Amp">
-                      {/* Top top */}
-                      <div>
-                          {/*header block*/}
-                          <Telescope.components.PostsSingleHeader post={post} user={currentUser}/>
+        return (
+          <div className="content_3X9xi">
+
+              <div className="container_2uJxj">
+                  <section className="postSection_1iIbk">
+                      <div className="sectionContent_21Amp">
+                          {/* Top top */}
+                          <div>
+                              {/*header block*/}
+                              <Telescope.components.PostsSingleHeader post={post} user={currentUser}/>
+                          </div>
+                          <div className="constraintWidth_ZyYbM body_1a08C">
+                              {/*middle left*/}
+                              <Telescope.components.PostDetail post={post} user={currentUser}/>
+                          </div>
+                          <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
                       </div>
-                      <div className="constraintWidth_ZyYbM body_1a08C">
-                          {/*middle left*/}
-                          <Telescope.components.PostDetail post={post} user={currentUser}/>
+                  </section>
+                  <section className="popularTodaySection_30n6J">
+                      <div className="sectionContent_21Amp">
+
+
                       </div>
-                      <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
-                  </div>
-              </section>
-              <section className="popularTodaySection_30n6J">
-                  <div className="sectionContent_21Amp">
+                  </section>
+              </div>
 
-
-                  </div>
-              </section>
           </div>
-
-      </div>
-    )
-};
+        )
+    }
+}
 
 PostsPage.displayName = "PostsPage";
 
