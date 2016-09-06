@@ -31,7 +31,7 @@ const UsersAvatar = ({user, size, link}) => {
 
     const avatar = avatarUrl ? img : initials;
 
-    const inlineBlock = link ? <Link style={aStyle} className="container__Ql6q lazyLoadContainer_3KgZD"
+    const inlineBlock = link ? <Link className="container__Ql6q lazyLoadContainer_3KgZD"
                                      to={Users.getProfileUrl(user)}>{avatar}</Link> : avatar;
 
     return (

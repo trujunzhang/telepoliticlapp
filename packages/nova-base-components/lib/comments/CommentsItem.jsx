@@ -150,7 +150,7 @@ class CommentsItem extends Component {
                           fill="#000000"></path>
                       </svg>
                     </span>
-                    <span className="label shareLabel_2yYck">tweet</span>
+                    <span className="shareLabel_2yYck">tweet</span>
                   </span>
               </a>
               <a
@@ -164,7 +164,7 @@ class CommentsItem extends Component {
                           fill="#FFF" fill-rule="evenodd"></path>
                       </svg>
                     </span>
-                    <span className="label shareLabel_2yYck">share</span>
+                    <span className="shareLabel_2yYck">share</span>
                   </span>
               </a>
               <a
@@ -181,13 +181,13 @@ class CommentsItem extends Component {
         const comment = this.props.comment;
 
         return (
-          <div className="thread_1dWPf" id={comment._id}>
+          <div >
               <Telescope.components.UsersAvatar size="small" user={comment.user}/>
 
               <div className="heading_3axGt">
                   <Telescope.components.UsersName user={comment.user}/>
               </div>
-              <div className="comments-item-date"><FormattedRelative value={comment.postedAt}/></div>
+              {/*<div className="comments-item-date"><FormattedRelative value={comment.postedAt}/></div>*/}
               {/*<Telescope.components.CanDo action="comments.edit" document={this.props.comment}>*/}
               {/*<div>*/}
               {/*<a className="comment-edit" onClick={this.showEdit}><FormattedMessage id="comments.edit"/></a>*/}

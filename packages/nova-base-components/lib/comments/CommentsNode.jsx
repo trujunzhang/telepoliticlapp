@@ -13,8 +13,7 @@ class CommentsNode extends Component {
     renderChildren(children) {
         return (
           <div className="comments-children">
-              {children.map(comment => <CommentsNode comment={comment} key={comment._id}
-                                                     currentUser={this.props.currentUser}/>)}
+
           </div>
         )
     }
@@ -25,9 +24,12 @@ class CommentsNode extends Component {
         const children = this.props.comment.childrenResults;
 
         return (
-          <div className="comments-node">
+          <div className="thread_1dWPf" id={comment._id}>
               {this.renderComment(comment)}
-              {children ? this.renderChildren(children) : ""}
+              <div>
+                  {children ? children.map(comment => <CommentsNode comment={comment} key={comment._id}
+                                                                    currentUser={this.props.currentUser}/>) : ""}
+              </div>
           </div>
         )
     }
