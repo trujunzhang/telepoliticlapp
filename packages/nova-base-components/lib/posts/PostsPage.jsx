@@ -21,10 +21,15 @@ class PostsPage extends Component {
                               <Telescope.components.PostsSingleHeader post={post} user={currentUser}/>
                           </div>
                           <div className="constraintWidth_ZyYbM body_1a08C">
-                              {/*middle left*/}
-                              {/*<Telescope.components.PostDetail post={post} user={currentUser}/>*/}
+                              <main className="main_3lfDa">
+                                  {/*post's tags*/}
+                                  <Telescope.components.PostTagItem/>
+                                  {/*middle left*/}
+                                  <Telescope.components.PostDetail post={post} user={currentUser}/>
+                                  {/*comments*/}
+                                  <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
+                              </main>
                           </div>
-                          <Telescope.components.PostsCommentsThread document={post} currentUser={currentUser}/>
                       </div>
                   </section>
                   <section className="popularTodaySection_30n6J">

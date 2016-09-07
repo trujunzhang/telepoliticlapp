@@ -21,11 +21,10 @@ const PostTagItem = () => {
     ];
 
     return (
-      <main className="main_3lfDa">
-          <div className="topics_39_B0" rel="topics-list">
-              {subNavigationItems.map((menu, key) => {
-                  return (
-                    <div className="topicWrap_2Uvaj" rel="topic-item">
+      <div className="topics_39_B0" rel="topics-list">
+          {subNavigationItems.map((menu, key) => {
+              return (
+                <div className="topicWrap_2Uvaj" rel="topic-item">
                         <span>
                             <a key={menu.id}
                                className="button_2I1re smallSize_1da-r secondaryText_PM80d greySolidColor_270pZ solidVariant_2wWrf"
@@ -33,13 +32,12 @@ const PostTagItem = () => {
                                 <div className="buttonContainer_wTYxi">{menu.title}</div>
                             </a>
                         </span>
-                    </div>
-                  )
-              })}
-          </div>
-      </main>
+                </div>
+              )
+          })}
+      </div>
     )
-}
+};
 
 PostTagItem.displayName = "PostTagItem";
 
