@@ -1,43 +1,30 @@
-import React from 'react';
+import React, {PropTypes, Component} from 'react';
 import {ListContainer} from "meteor/utilities:react-list-container";
 import Categories from "meteor/nova:categories";
 
-const PostTagItem = () => {
+class PostTagItem extends Component {
+    render() {
+        const tags = this.props.post.tags;
 
-    const subNavigationItems = [
-        {
-            'id': 123,
-            "href": "/tech",
-            "title": "iPhonexxx"
-        }, {
-            'id': 234,
-            "href": "/games",
-            "title": "Home"
-        }, {
-            'id': 345,
-            "href": "/podcasts",
-            "title": "Furniture"
-        }
-    ];
-
-    return (
-      <div className="topics_39_B0" rel="topics-list">
-          {subNavigationItems.map((menu, key) => {
-              return (
-                <div className="topicWrap_2Uvaj" rel="topic-item">
+        return (
+          <div className="topics_39_B0" rel="topics-list">
+              {tags.map((menu, key) => {
+                  return (
+                    <div className="topicWrap_2Uvaj" rel="topic-item">
                         <span>
-                            <a key={menu.id}
+                            <a key={key}
                                className="button_2I1re smallSize_1da-r secondaryText_PM80d greySolidColor_270pZ solidVariant_2wWrf"
                                href="/topics/iphone">
-                                <div className="buttonContainer_wTYxi">{menu.title}</div>
+                                <div className="buttonContainer_wTYxi">{menu}</div>
                             </a>
                         </span>
-                </div>
-              )
-          })}
-      </div>
-    )
-};
+                    </div>
+                  )
+              })}
+          </div>
+        )
+    }
+}
 
 PostTagItem.displayName = "PostTagItem";
 

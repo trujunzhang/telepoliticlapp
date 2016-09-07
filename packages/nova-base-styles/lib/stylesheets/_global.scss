@@ -19,11 +19,10 @@ a {
   text-decoration: none;
 }
 
-a:focus,
-a:hover {
-  color: white;
-  text-decoration: underline;
-}
+//a:focus, a:hover {
+  //color: white;
+  //text-decoration: underline;
+//}
 
 .page-title {
   margin-bottom: $vmargin*2;
