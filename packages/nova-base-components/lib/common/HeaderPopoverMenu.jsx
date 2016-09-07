@@ -9,6 +9,19 @@ import Users from 'meteor/nova:users';
 
 class HeaderPopoverMenu extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.links = [
+            {"href": "/tech", "title": "ABOUT"},
+            {"href": "/games", "title": "TEAM"},
+            {"href": "/podcasts", "title": "CONTACT"},
+            {"href": "/books", "title": "PRIVACY POLICY"},
+            {"href": "/topics/developer-tools", "title": "TEAMS OF USE"},
+            {"href": "/topics/photography-tools", "title": "Cookie Policy"}
+        ];
+    }
+
     componentDidMount() {
         document.addEventListener('click', this.hide.bind(this), true)
     }
@@ -21,16 +34,11 @@ class HeaderPopoverMenu extends Component {
         this.context.messages.dismissPopoverMenu();
     }
 
+    onMenuItemClick(item) {
+
+    }
+
     render() {
-        const subNavigationItems = [
-            {"href": "/tech", "title": "Politics"},
-            {"href": "/games", "title": "Economy"},
-            {"href": "/podcasts", "title": "Foreign Affairs"},
-            {"href": "/books", "title": "Defence"},
-            {"href": "/topics/developer-tools", "title": "Education"},
-            {"href": "/topics/photography-tools", "title": "Healthcare"},
-            {"href": "/topics/wearables", "title": "Sustainability"},
-        ];
 
         const comp = this.props.comp;
         const top = comp.top + comp.height + 14;
@@ -39,7 +47,7 @@ class HeaderPopoverMenu extends Component {
         return (
           <div className="popover v-bottom-center" style={{top: top, left: left}}>
               <ul className="content_2mq4P">
-                  {subNavigationItems.map((menu, key) => {
+                  {this.links.map((menu, key) => {
                       return (
                         <li
                           className="option_2XMGo secondaryBoldText_1PBCf secondaryText_PM80d subtle_1BWOT base_3CbW2">
