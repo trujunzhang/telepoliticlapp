@@ -188,7 +188,7 @@ class CommentsItem extends Component {
                   <Telescope.components.UsersName user={comment.user}/>
               </div>
               <Telescope.components.CanDo action="comments.edit" document={this.props.comment}>
-                  <div>
+                  <div style={{"margin-top": -10}}>
                       <a className="comment-edit" onClick={this.showEdit}><FormattedMessage id="comments.edit"/></a>
                       <a className="comment-delete" onClick={this.deleteComment}><FormattedMessage
                         id="comments.delete"/></a>
